@@ -464,22 +464,22 @@ header .navbar ul li.col1>a:hover{
   background: red;
 }
 header .navbar ul li.col2>a:hover{
-  background: #5189FF;
+  background: #6D19EB;
 }
 header .navbar ul li.col3>a:hover{
-  background: #C9BFFF;
+  background: #AD078A;
 }
 header .navbar ul li.col4>a:hover{
-  background: #98A2E9;
+  background: #3C05FF;
 }
 header .navbar ul li.col5>a:hover{
-  background: #FF887B;
+  background: #2F14B8;
 }
 header .navbar ul li.col6>a:hover{
-  background: #B084E8;
+  background: #1D8C1D;
 }
 header .navbar ul li.col7>a:hover{
-  background: #DD8AFF;
+  background: #4D16AD;
 }
 
 header .navbar ul li.hov-nav{
@@ -509,7 +509,7 @@ header .navbar ul li ul{
 }
 #hov-nav li:hover{
     
-    background: #AC7EEB !important;
+    background: #f59120 !important;
 }
 #hov-nav li:hover a{
     color:#fff !important;

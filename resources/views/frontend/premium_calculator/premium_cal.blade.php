@@ -11,7 +11,7 @@
     padding: 1px 0;
   }
 
-  .premium_cal{
+  {{-- .premium_cal{
     margin-top : 100px !important;
   }
 
@@ -44,7 +44,7 @@
 .premium_calculator_title{
   padding-top: 100px;
   padding-bottom: 25px;
-}
+} --}}
 
 
 

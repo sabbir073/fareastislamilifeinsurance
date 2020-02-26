@@ -74,9 +74,23 @@ ADD PRODUCT
                   <!-- product_details    -->
                   <!-- product_photo   -->
 
+                  <label for="product_title">Product English</label>
                   <div class="row no-gutters">
+
                      <label class="custom-file">
                         <input type="file" id="file" name="product_photo" class="custom-file-input">
+                        <span class="custom-file-control"></span>
+                     </label>
+                  </div>
+
+                  <!-- product_photo  end -->
+                  <!-- product_photo   -->
+
+                  <label for="product_title">Product Bangla</label>
+                  <div class="row no-gutters">
+
+                     <label class="custom-file">
+                        <input type="file" id="file" name="product_photo_bang" class="custom-file-input">
                         <span class="custom-file-control"></span>
                      </label>
                   </div>

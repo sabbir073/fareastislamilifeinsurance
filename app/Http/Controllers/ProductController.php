@@ -37,6 +37,7 @@ class ProductController extends Controller
         'product_details'  => 'required',
         'product_details_ban'  => 'required',
         'product_photo'  => 'required',
+        'product_photo_bang'  => 'required',
 
       ]);
 
@@ -46,6 +47,7 @@ class ProductController extends Controller
         'product_details'   =>$request->product_details,
         'product_details_ban'   =>$request->product_details_ban,
         'product_photo'     =>$request->product_photo,
+        'product_photo_bang'     =>$request->product_photo_bang,
         'created_at'        => Carbon::now(),
       ]);
 
@@ -56,6 +58,16 @@ class ProductController extends Controller
            Image::make($photo_upload)->resize(262,265)->save(base_path('public/uploads/products/'.$photo_name),100);
            Product::find($last_inserted_id)->update([
            'product_photo'   => $photo_name,
+          ]);
+          }
+
+      if ($request->hasFile('product_photo_bang')) {
+           $photo_upload     =  $request ->product_photo_bang;
+           $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+           $photo_name       =  $last_inserted_id . "product_photo_bang" . "." . $photo_extension;
+           Image::make($photo_upload)->resize(262,265)->save(base_path('public/uploads/products/'.$photo_name),100);
+           Product::find($last_inserted_id)->update([
+           'product_photo_bang'   => $photo_name,
           ]);
           }
 

@@ -19,19 +19,7 @@ class CreateProductsTable extends Migration
             $table->longText('product_details');
             $table->longText('product_details_ban');
             $table->string('product_photo');
-
-            $table->integer('product_id');
-            $table->string('title');
-            $table->longText('dis');
-            $table->string('titleBan');
-            $table->longText('disBan');
-
-            $table->string('title');
-            $table->longText('dis');
-            $table->string('titleBan');
-            $table->longText('disBan');
-
-
+            $table->string('product_photo_bang');
             $table->softDeletes();
             $table->timestamps();
         });

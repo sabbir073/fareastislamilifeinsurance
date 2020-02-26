@@ -1,0 +1,201 @@
+@extends('frontend.homepage.app')
+
+@section('css')
+
+
+.table-striped tbody tr:nth-of-type(odd){
+  background: #FFDDA3;
+}
+.table-striped tbody tr:nth-of-type(even){
+  background: #FFF0C9;
+}
+.table-bordered td, .table-bordered th{
+  border: 1px solid #fff;
+}
+
+
+@endsection
+
+@section('content')
+
+
+  <section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="z-index: 1;">
+          <div class="bg_image_holder" style="background-image: url(&quot;img/breadbg.jpg&quot;); opacity: 1;">
+              <img src="https://picfiles.alphacoders.com/191/191008.jpg" alt="img/breadbg.jpg">
+          </div>
+          <div class="container content_above">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
+                          <h4 class="page_title">PRODUCTS SINGLE</h4>
+                      </div>
+                  </div>
+              </div><!-- ends: .row -->
+          </div>
+      </section>
+
+
+
+
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">English</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Bangla</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+
+  {{-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> --}}
+
+
+<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <section class="blog-wrapper section-padding">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                      <div class="blog-posts">
+                          <div class="blog-single">
+
+
+      <div class="card post--card post--card2 " id="printMe">
+
+        <div class="row">
+          <div class="col-md-12" style="text-align: end;">
+            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="makePdf();">PRINT</a>
+          </div>
+        </div>
+
+
+          <div class="card-body">
+              {{-- <h2 style="color: #C33030">Assurance Plans (With Profits)</h2>
+              <h5 style="color: #00FF00">Introduction:</h5>
+              <p class="post-meta" style="color: #000">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
+              {!! html_entity_decode($productInfo->product_details) !!}
+
+
+              <table class="table table-bordered table-striped" >
+
+                <tbody>
+                  @foreach($BenifitProduct as $item)
+                  <tr>
+                    <th scope="row">{!! html_entity_decode($item->title) !!}</th>
+                    <td>{!! html_entity_decode($item->dis) !!}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+
+
+              <h5 style="color: #00FF00">Benifits:</h5>
+              <table class="table table-bordered table-striped">
+                <tbody>
+                  @foreach($IntroductionProduct as $item)
+                  <tr>
+                    <th scope="row">{!! html_entity_decode($item->title) !!}</th>
+                    <td>{!! html_entity_decode($item->dis) !!}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+
+          </div>
+      </div><!-- End: .card -->
+
+                          </div><!-- ends: .blog-single -->
+
+                      </div>
+
+
+                  </div><!-- ends: .col-lg-8 -->
+              </div>
+          </div>
+        </section>
+</div>
+
+<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <section class="blog-wrapper section-padding">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-10 offset-lg-1">
+                      <div class="blog-posts">
+                          <div class="blog-single">
+
+
+      <div class="card post--card post--card2 ">
+
+        <div class="row">
+          <div class="col-md-12" style="text-align: end;">
+            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="makePdf();">PRINT</a>
+          </div>
+        </div>
+
+
+          <div class="card-body" id="printMe">
+            {!! html_entity_decode($productInfo->product_details_ban) !!}
+
+
+            <table class="table table-bordered table-striped">
+
+              <tbody>
+                @foreach($BenifitProduct as $item)
+                <tr>
+                  <th scope="row">{!! html_entity_decode($item->titleBan) !!}</th>
+                  <td>{!! html_entity_decode($item->disBan) !!}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+
+
+            <h5 style="color: #00FF00">উপকারিতা:</h5>
+            <table class="table table-bordered table-striped">
+              <tbody>
+                @foreach($IntroductionProduct as $item)
+                <tr>
+                  <th scope="row">{!! html_entity_decode($item->titleBan) !!}</th>
+                  <td>{!! html_entity_decode($item->disBan) !!}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+      </div><!-- End: .card -->
+
+                          </div><!-- ends: .blog-single -->
+
+                      </div>
+
+
+                  </div><!-- ends: .col-lg-8 -->
+              </div>
+          </div>
+        </section>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@endsection
+
+@section('js')
+
+
+
+@endsection

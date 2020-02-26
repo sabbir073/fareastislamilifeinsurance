@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fareast Islami life insurance co. ltd.</title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- popup -->
+
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+
+
+        <!--========================================================================================-->
+        	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/popup/vendor/css-hamburgers/hamburgers.min.css') }}">
+        <!--========================================================================================-->
+        	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/popup/vendor/select2/select2.min.css') }}">
+        <!--========================================================================================-->
+        	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/popup/css/util.css') }}">
+        	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/popup/css/main.css') }}">
+
+
+          <link rel="stylesheet" type="text/css" href="{{ asset('frontend/footer/style.css') }}">
+           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+
+    <!--css file link-->
+    <link rel="stylesheet" href="https://res.cloudinary.com/code-error/raw/upload/v1580302600/fareast/css/plugin.min_muo9rg.css">
+    <link rel="stylesheet" href="https://res.cloudinary.com/code-error/raw/upload/v1580302743/fareast/css/style_h2hso6.css">
+
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/sticky.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    @yield('css_cdn')
+
+    <link rel="icon" href="{{ asset('frontend/img/Logo.png') }}" type="image/gif" sizes="16x16">
+
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+
+</head>
+
+<style media="screen">
+
+  @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+  /*PRELOADING------------ */
+
+#global-loader {
+    position:fixed;
+    z-index:50000;
+    background: url('{{ asset('frontend/preloader.gif') }}') no-repeat 50% 50% rgba(255, 255, 255);
+    background-repeat: no-repeat;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    z-index: 999999;
+
+}
+
+
+
+
+#topbar{
+    z-index:2;
+    /* background: #000; */
+    background: transparent;
+}
+.bg-success, .sticky-head{
+    transition: 0.5s !important;
+}
+
+
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  span,h1,h2,h3,h4,h5,h6,p,a,li{
+    font-family: 'Lora', serif !important;
+  }
+
+
+  .news-item li{
+    font-size: 16px !important;
+  }
+
+  #popup p{
+    font-size: 16px !important;
+    text-align: justify;
+    padding: 20px;
+  }
+
+  #star{
+    background-color: #f5f6fa !important;
+  }
+
+  #corporate{
+    background-color: #ffffff !important;
+  }
+
+  .section_title{
+    padding: 40px !important;
+    text-transform: uppercase;
+  }
+
+
+  .search_overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.search_overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.search_overlay a:hover, .search_overlay a:focus {
+  color: #f1f1f1;
+}
+
+.search_overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.search_input{
+  padding: 50px !important;
+}
+.search_button{
+  padding: 27px !important;
+}
+
+@media screen and (max-height: 450px) {
+  .search_overlay a {font-size: 20px}
+  .search_overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.navbar-nav li:hover{
+  background: #2d3436 !important;
+  border-bottom: none !important;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  font-size: 12px !important;
+  text-transform: uppercase;
+}
+/*
+.footer-menu ul li a{
+  color: #000 !important;
+}
+
+.footer-menu h4{
+  color: #fff !important;
+}
+
+.footer-menu ul li a{
+  color: #fff !important;
+}
+
+.copyright-social i{
+  font-size: 24px !important;
+}
+
+.copyright-social a{
+  color: #fff !important;
+}
+
+.mini-footer{
+  background: #2f3542;
+} */
+
+
+
+.footer-wrap {
+    padding-top: 43px;
+    background-size: cover;
+}
+
+.footer-wrap h3 {
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.footer-wrap p {
+    font-size: 13px;
+    line-height: 24px;
+    color: #b3b3b3;
+    margin-top: 15px;
+}
+
+.footer-wrap p a {
+    color: #fff;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.footer-wrap p a:hover {
+    text-decoration: none;
+    color: #ff7800;
+}
+
+.footer-links li a {
+    font-size: 13px;
+    line-height: 30px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+
+.footer-links li:before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #ccc;
+}
+
+.footer-category li a {
+    font-size: 13px;
+    line-height: 30px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-category li:before {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    padding-right: 10px;
+    color: #b3b3b3;
+}
+
+.address {
+
+    color: #b3b3b3;
+    font-size: 14px;
+    position: relative;
+    padding-left: 30px;
+    line-height: 30px;
+}
+
+.address:before {
+    content: "\f277";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info a {
+
+    color: #b3b3b3;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
+
+.info a {
+
+    color: #b3b3b3;
+    font-size: 14px;
+    /* line-height: 30px; */
+    font-weight: normal;
+    /* border: 1px solid #000; */
+}
+
+.fa-fax:before {
+    content: "\f1ac";
+}
+
+.copyright {
+    border-top: 1px solid #111;
+    font-size: 14px;
+    color: #ccc;
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+    background: #222;
+}
+footer .second_class{
+    border-bottom: 1px solid #444;
+    padding-bottom: 25px;
+}
+footer .first_class {
+    padding-bottom: 21px;
+    border-bottom: 1px solid #444;
+}
+footer .first_class p, footer .first_class h3{
+    margin: 0 0;
+
+}
+footer{
+    background: #333;
+}
+
+footer .newsletter input[type="text"] {
+    width: 100%;
+    background: #fff;
+    color: #333;
+    border: 1px solid #222;
+    padding: 14px 20px;
+    border-radius: 50px;
+    margin-top: 12px;
+}
+
+.newsletter .newsletter_submit_btn {
+    background: #fff;
+    position: absolute;
+    right: 30px;
+    border: 0;
+    top: 26px;
+    font-size: 17px;
+    color: #333;
+}
+
+
+footer .second_class_bdr{
+    padding-top: 25px;
+    border-top:1px solid #222;
+}
+
+footer .btn-facebook a {
+    padding: 6px 14px !important;
+}
+
+footer .btn-envelop a {
+    color: #D6403A;
+    font-size: 15px;
+    padding: 12px 12px;
+}
+
+footer .round-btn a {
+    padding: 6px 12px;
+}
+
+footer .round-btn {
+    box-shadow: 2px 2px 5px 0px #222 !important;}
+
+footer .round-btn {
+    margin: 15px 4px;}
+
+footer dl, ol, ul {
+    padding-left: 5px;
+}
+	footer li{
+		list-style: none;
+	}
+
+
+
+/*Style added by Md Sabbir ahmed*/
+
+.navbar-nav li:hover{
+    background-image: linear-gradient(to right, transparent, transparent 50%, #2d3436 50%, #2d3436) !important;
+    background-position: 100% 100% !important;
+    background-size: 200% 100% !important;
+    transition: all .40s ease-in !important;
+  border-bottom: none !important;
+}
+
+/*Style added by Md Sabbir ahmed*/
+
+.navbar-dark .navbar-nav .nav-link{
+  font-size: 12px !important;
+  text-transform: uppercase;
+}
+
+@media(max-width:768px){
+    .footer-wrap h3 {
+    margin-top: 27px;}
+
+    footer .round-btn {
+    margin: 15px 4px;}
+}
+@media(max-width:320px){
+.copyright {
+    font-size: 13px;}
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #46A745;
+  outline: 1px solid slategrey;
+  border-radius: 5px;
+}
+
+
+/*05-02-2020 start*/
+header .brand img{
+    transition: 0.3s !important;
+}
+header .navbar{
+    padding: 0px !important;
+}
+header .navbar ul li a{
+    padding: 15px;
+}
+
+/* header .navbar ul li{
+    border-left:1px solid #fff;
+    border-right-width: thin;
+} */
+
+
+header .navbar ul li:first-child{
+    border:none;
+}
+header .navbar ul li a:hover{
+    /* background: #000; */
+}
+header .navbar ul li.hov-nav{
+    position:relative;
+}
+header .navbar ul li:hover ul{
+    display:block;
+}
+header .navbar ul li ul{
+    position:absolute;
+    left:0px;
+    top:100%;
+    padding:0px;
+    display:none;
+    width:180px;
+}
+#hov-nav li a{
+    padding:5px;
+    font-size:16px;
+}
+#hov-nav li{
+    border:none !important;
+}
+#hov-nav li:hover{
+    background: #fff !important;
+    color: #000 !important;
+}
+#hov-nav li a:hover{
+    color: #000 !important;
+}
+/*05-02-2020 end*/
+
+/* Floating Social Media Bar Style Starts Here */
+
+#sidebar {
+  height: 250px;
+  width: 10px;
+  position: fixed;
+  text-align: center;
+  padding: 10px;
+  margin-left: 10px;
+  z-index: 4;
+  top: 35%;
+}
+
+.social p i {
+  left: 30px;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 15px;
+  color:#fff;
+
+}
+.social p {
+  color:#fff;
+}
+
+.social {
+  margin-left: -210px;
+  width: 215px;
+  padding: 0;
+  display: inline-table;
+  height: 0px;
+  background-color: rgba(128, 128, 128, 0.73);
+  -moz-transition-property: margin-left;
+  -moz-transition-duration: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -ms-transition-property: margin-left;
+  -ms-transition-duration: 0.2s;
+  -ms-transition-delay: 0.2s;
+  -o-transition-property: margin-left;
+  -o-transition-duration: 0.2s;
+  -o-transition-delay: 0.2s;
+  -webkit-transition-property: margin-left;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  box-shadow: 0px 0px 6px 0px #3E3D3D;
+  cursor: pointer;
+}
+
+.social:hover {
+  margin-left: -30px;
+  width: 230px;
+  background-color: #3b5998;
+}
+
+.facebook:hover {
+  background-color: #3b5998;
+}
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter:hover {
+  background-color: #4099FF;
+}
+.twitter {
+  background-color: #4099FF;
+}
+
+.google:hover {
+  background-color: #DD4B39;
+}
+.google {
+  background-color: #DD4B39;
+}
+
+.linkedin p i {
+  left: 15px;
+  color:#fff;
+  top: 4px;
+
+}
+.facebook p i {
+  left: 27px;
+  color:#fff;
+  top: 4px;
+}
+.twitter p i {
+  left: 27px;
+  color:#fff;
+  top: 4px;
+}
+
+.google p i {
+  left: 30px;
+  color:#fff;
+  top: 4px;
+}
+
+.youtube p i {
+  left: 12px;
+  color:#fff;
+  top: 4px;
+
+}
+
+.youtube:hover {
+  background-color: #E52D27;
+}
+
+.youtube {
+  background-color: #E52D27;
+}
+
+.linkedin:hover {
+  background-color: #0976B4;
+}
+
+.linkedin {
+  background-color: #0976B4;
+}
+
+
+/* Floating Social Media Bar Style Ends Here */
+/* Floating Right Here Here */
+
+
+
+/* Floating Right Ends Here */
+.carousel-indicators{
+  z-index: 1;
+}
+
+
+/* nav hover effect */
+
+
+.open > .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity:1;
+}
+
+.dropdown-menu {
+  opacity:.3;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+.dropdown-toggle::after{
+  display: none;
+}
+
+/* nav hover effect */
+
+@yield('css')
+
+{{-- --------------------------- --}}
+
+/* Floating Right Here Here */
+
+.sticky-container {
+/*background-color: #333;*/
+z-index: 2;
+padding: 0px;
+margin: 0px;
+position: fixed;
+right: -168px;
+top: 37%;
+width: 200px;
+}
+.sticky-container .sticky li {
+list-style-type: none;
+
+color: #efefef;
+height: 43px;
+padding: 0px;
+margin: 0px 0px 1px 0px;
+-webkit-transition: all 0.25s ease-in-out;
+-moz-transition: all 0.25s ease-in-out;
+-o-transition: all 0.25s ease-in-out;
+transition: all 0.25s ease-in-out;
+cursor: pointer;
+/* filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); */
+/* filter: gray; */
+/* -webkit-filter: grayscale(100%); */
+}
+.sticky-container .sticky li:hover {
+margin-left: -150px;
+/*-webkit-transform: translateX(-115px);
+		-moz-transform: translateX(-115px);
+		-o-transform: translateX(-115px);
+		-ms-transform: translateX(-115px);
+		transform:translateX(-115px);*/
+		/*background-color: #8e44ad;*/
+filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+-webkit-filter: grayscale(0%);
+}
+.sticky-container .sticky li img {
+float: left;
+margin: 10px 4px;
+margin-right: 10px;
+}
+.sticky-container .sticky li p {
+padding: 0px;
+margin: 0px;
+text-transform: uppercase;
+line-height: 43px;
+}
+/** content **/
+.sticky-container .content {
+margin-top: 150px;
+margin-left: 100px;
+width: 700px;
+}
+
+
+.sticky-container p {
+color: #ecf0f1;
+font-family: "Lato";
+line-height: 28px;
+font-size: 12px;
+padding-top: 50px;
+}
+
+
+{{-- ------------------- --}}
+</style>
+
+
+<body>
+
+<!-- Loader Start-->
+<div id="global-loader" ></div>
+<!-- Loader End-->
+
+{{-- click to top --}}
+
+{{-- click to top --}}
+
+{{-- floating bar --}}
+<!-- Floating Social Media bar Starts -->
+<div id="sidebar">
+  <div class="social facebook">
+    <a href=" https://www.facebook.com " target="_blank">
+      <p>Like on Facebook <i class="fab fa-facebook-f"></i> </p>
+    </a>
+  </div>
+  <div class="social twitter">
+    <a href=" https://www.twitter.com " target="_blank">
+      <p>Follow on Twitter <i class="fab fa-twitter"></i> </p>
+    </a>
+  </div>
+  <div class="social google">
+    <a href=" https://www.plus.google.com " target="_blank">
+      <p>&nbspAdd on Google+ <i class="fab fa-google"></i> </p>
+    </a>
+  </div>
+  <div class="social youtube">
+    <a href=" https://www.youtube.com " target="_blank">
+      <p>Subscribe on Youtube <i class="fab fa-youtube"></i> </p>
+    </a>
+  </div>
+  <div class="social linkedin">
+    <a href=" https://www.linkedin.com " target="_blank">
+      <p>Connect on LinkedIn <i class="fab fa-linkedin-in"></i> </p>
+    </a>
+  </div>
+</div>
+<!-- Floating Social Media bar Ends -->
+{{-- floating bar --}}
+
+@if (Route::currentRouteNamed('homepage'))
+
+
+
+  {{-- floating bar --}}
+  <!-- Right Side -->
+  <div class="sticky-container" id="sticky_right" style="display:none;">
+  <ul class="sticky">
+  <li style="background-color: #2980b9;"> <img width="20" height="22" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421163/Credit_Crd_aopyjx.png" />
+  <p>Credit Card</p>
+  </li>
+  <li style="background-color: #c0392b;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421181/calcu_rghuou.png" />
+  <p>Premium Calculator</p>
+  </li>
+  <li style="background-color: #8e44ad;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421148/Credit1_b2ibrr.png" />
+  <p>Credit</p>
+  </li>
+  <li style="background-color: #1B1464;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421128/crs_lxipw6.png" />
+  <p>Cross</p>
+  </li>
+  <li style="background-color: #B53471;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421086/Pinnn_quwttp.png" />
+  <p>Pin</p>
+  </li>
+  </ul>
+  </div>
+  <!-- Right Side -->
+  {{-- floating bar --}}
+
+  @else
+
+    {{-- floating bar --}}
+    <!-- Right Side -->
+    <div class="sticky-container" id="sticky_right">
+    <ul class="sticky">
+    <li style="background-color: #2980b9;"> <img width="20" height="22" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421163/Credit_Crd_aopyjx.png" />
+    <p>Credit Card</p>
+    </li>
+    <li style="background-color: #c0392b;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421181/calcu_rghuou.png" />
+    <p>Premium Calculator</p>
+    </li>
+    <li style="background-color: #8e44ad;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421148/Credit1_b2ibrr.png" />
+    <p>Credit</p>
+    </li>
+    <li style="background-color: #1B1464;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421128/crs_lxipw6.png" />
+    <p>Cross</p>
+    </li>
+    <li style="background-color: #B53471;"> <img width="18" height="20" title="" alt="" src="https://res.cloudinary.com/onexa/image/upload/v1581421086/Pinnn_quwttp.png" />
+    <p>Pin</p>
+    </li>
+    </ul>
+    </div>
+    <!-- Right Side -->
+    {{-- floating bar --}}
+
+  @endif
+
+
+
+
+
+    <div id="banner">
+
+        <div id="topbar">
+
+          @forelse ($top_headers = App\Topheader::latest()->paginate(1) as $top_header)
+            <div class="contant" style="margin: 5px;">
+
+
+                @if (isset($top_header->phone_number))
+                  <div class="phone">
+                      <i class="fas fa-phone-alt"></i>
+                      <span>
+                        <a href="tel:{{ $top_header->phone_number }}" style="color: #fff;">{{ $top_header->phone_number }}</a>
+                      </span>
+                  </div>
+                @endif
+
+                @if (isset($top_header->email))
+                  <div class="mail">
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                      <span>{{$top_header->email}}</span>
+                  </div>
+                @endif
+
+                @if (isset($top_header->gplay))
+                  <div class="app">
+                    <a href="{{$top_header->gplay}}">
+                      <img src="{{ asset('frontend/img/playstore.png') }}" alt="Playstore">
+                      <span class="text-white">Get our app</span>
+                    </a>
+
+                  </div>
+                @endif
+
+            </div>
+          @empty
+
+          @endforelse
+
+
+
+
+
+        </div>
+
+
+
+        <header class="bg-success">
+            <div class="container">
+
+
+
+                <div class="brand">
+
+                @php
+                  $all_menu = App\MainMenu::all();
+                  $all_sub_menu = App\SubMenu::all();
+                @endphp
+
+                  <a href="{{ route('homepage') }}">
+                    @foreach ($logos  = App\Logo::where('status',1)->get() as $logo)
+                        <img class="logo" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo">
+                        {{-- <img class="img-fluid" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo"> --}}
+                    @endforeach
+                </a>
+                </div>
+                <div class="navbar navbar-expand-lg navbar-dark far_nav">
+                    <a href="#" class="navbar-brand"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                           <a class="nav-link" data-effect="Home" href="{{ route('homepage') }}">Home</a>
+                         </li>
+
+                        @foreach ($all_menu as $menu)
+
+                        <li class="dropdown" style="padding: 13px 0; text-transform: uppercase;">
+
+                            <a href="{{ $menu->link }}" id="drop1" target="_parent" style="font-size: 13.5px !important;" class="dropdown-toggle far_manu" role="button">
+                               {{ $menu->perent_menu_name }}
+                            </a>
+@if(App\SubMenu::where('parent_menu_id',$menu->id)->exists())
+                            <ul role="menu" id="hov-nav" class="dropdown-menu" aria-labelledby="drop1" style="margin-top: 40px;">
+                              @foreach ($all_sub_menu as $sub_menu)
+                                @if($sub_menu->parent_menu_id == $menu->id)
+                                <li role="presentation" style="padding: 9px; background: #1e272e;">
+                                  <a href="{{ $sub_menu->sub_menu_link }}" role="menuitem" style="font-size: 13.5px !important;">{{ $sub_menu->sub_menu_name }}</a>
+                                </li>
+@endif
+  @endforeach
+                            </ul>
+                              @endif
+
+                        </li>
+                          @endforeach
+
+
+
+                          {{-- <li class="nav-item">
+                             <a class="nav-link" href="{{ route('career') }}">Careers</a>
+                           </li>
+
+                           <li class="nav-item">
+                              <a class="nav-link" href="{{ route('about') }}">About</a>
+                            </li> --}}
+
+
+
+
+                            <li class="nav-item">
+                               <a class="nav-link" href="{{ route('contacts') }}">Contact Us</a>
+                             </li>
+
+                        </ul>
+
+
+
+                        <div id="myNav" class="search_overlay">
+                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                          <div class="overlay-content">
+
+                            <div class="container">
+
+                              <div class="input-group">
+                                 <input type="text" class="form-control search_input" placeholder="Search">
+                                 <div class="input-group-append">
+                                   <button class="btn btn-success" type="button">
+                                     <i class="fa fa-search search_button"></i>
+                                   </button>
+                                 </div>
+                               </div>
+
+                            </div>
+
+
+
+                          </div>
+                        </div>
+
+
+                        <div class="search">
+                            <a href="#" onclick="openNav()"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+      <main>
+        @yield('content')
+      </main>
+
+
+
+
+
+
+{{-- New footer --}}
+
+
+<!--footer start-->
+<footer class="footer6 footer--dark">
+        <div class="footer__big">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget text_widget">
+                            <img class="footer_logo" src="https://res.cloudinary.com/onexa/image/upload/v1581311828/images/logo_qmzvfy.png" class="img-fluid" width="65%" alt="logo">
+                            <p>
+                                <a href="tel:+123-4567890" class="tel">+123 4567890</a>
+                                <a href="mailto:support@Tejarat.com" class="mail">Support@Tejarat.com</a>
+                                <span class="address">Dhaka, Bangladesh</span>
+                            </p>
+                        </div>
+                    </div><!-- ends: .col-lg-3 -->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
+                        <div class="widget widget--links">
+                            <h4 class="widget__title2">Company</h4>
+                            <ul class="links">
+
+                              @php
+
+                              $footer_widget_ones   = App\FooterMenu::where('footer_widget_id',1)->get();
+                              $footer_widget_twos   = App\FooterMenu::where('footer_widget_id',2)->get();
+                              $footer_widget_threes = App\FooterMenu::where('footer_widget_id',3)->get();
+
+                              @endphp
+
+                              @foreach ($footer_widget_ones as $footer_widget_one)
+                                <li><a href="{{ $footer_widget_one->link }}">{{ $footer_widget_one->footer_menu_name }}</a></li>
+                              @endforeach
+
+                            </ul>
+                        </div><!-- ends: .widget -->
+                    </div><!-- ends: .col-lg-3 -->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
+                        <div class="widget widget--links">
+                            <h4 class="widget__title2">Services</h4>
+                            <ul class="links">
+                              @foreach ($footer_widget_twos as $footer_widget_two)
+                                <li><a href="{{ $footer_widget_two->link }}">{{ $footer_widget_two->footer_menu_name }}</a></li>
+                              @endforeach
+                            </ul>
+                        </div><!-- ends: .widget -->
+                    </div><!-- ends: .col-lg-3 -->
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget widget--links">
+                            <h4 class="widget__title2">Useful Links</h4>
+                            <ul class="links">
+                              @foreach ($footer_widget_threes as $footer_widget_three)
+                                <li><a href="{{ $footer_widget_three->link }}">{{ $footer_widget_three->footer_menu_name }}</a></li>
+                              @endforeach
+                            </ul>
+                        </div><!-- ends: .widget -->
+                    </div><!-- ends: .col-lg-3 -->
+                </div>
+            </div>
+        </div><!-- ends: footer__big -->
+
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="far_moto text-center">
+                  <h5 class="text-white">ইসলামী শরি'আহ মোতাবেক পরিচালিত</h5>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__bottom-content">
+                            <p>© 2020 Fareast Islami Life Insurance Ltd. All rights reserved.</p>
+
+
+
+    <div class="social-basic ">
+        <ul class="d-flex justify-content-end ">
+
+            <li><a href="#"><i data-feather="facebook"></i></a></li>
+            <li><a href="#"><i data-feather="youtube"></i></a></li>
+            <li><a href="#"><i data-feather="instagram"></i></a></li>
+            <li><a href="#"><i data-feather="twitter"></i></a></li>
+        </ul>
+    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- ends: footer__small -->
+    </footer>
+{{-- <footer>
+
+
+
+<!--footer end-->
+
+
+{{-- New footer --}}
+
+
+
+
+
+        <!--script code here-->
+
+        <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.parallax-1.1.3.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://res.cloudinary.com/code-error/raw/upload/v1580302645/fareast/js/plugins.min_s8gcgd.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script type="text/javascript" src="https://res.cloudinary.com/code-error/raw/upload/v1580302643/fareast/js/script.min_bxmmd0.js"></script>
+
+
+
+        <script>
+            $(document).ready(function() {
+              'use strict'
+
+                $(".product-slider").owlCarousel({
+                    items: 4,
+                    margin: 20,
+                    loop: true,
+                    autoplay: true,
+                    nav: true,
+                    dotsEach: true,
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true,
+                            loop: true
+                        },
+                        600: {
+                            items: 3,
+                            nav: true,
+                            loop: true
+                        },
+                        1000: {
+                            items: 4,
+                            nav: true,
+                            loop: true
+                        }
+                    }
+                });
+
+                $(".star-slider").owlCarousel({
+                    items: 5,
+                    margin: 20,
+                    loop: true,
+                    autoplay: true,
+                    nav: false,
+                    dotsEach: false,
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true
+                        },
+                        600: {
+                            items: 3,
+                            nav: false
+                        },
+                        1000: {
+                            items: 5,
+                            nav: true,
+                            loop: false
+                        }
+                    }
+                });
+                $(".event-slide").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    nav: false,
+                    dots: true,
+
+                });
+                $(".award-slide").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    nav: true,
+                    responsiveClass: true,
+                    responsive: {
+                        768: {
+                            items: 1,
+                        },
+                        414: {
+                            items: 1,
+                        },
+                        375: {
+                            items: 1,
+                        },
+                        360: {
+                            items: 1,
+                        }
+                    }
+                });
+                $(".corporate-slide").owlCarousel({
+                    items: 9,
+                    margin: 10,
+                    loop: true,
+                    autoplay: true,
+                    responsiveClass: true,
+                    responsive: {
+                        768: {
+                            items: 6,
+                        },
+                        414: {
+                            items: 3,
+                        },
+                        375: {
+                            items: 2,
+                        },
+                        360: {
+                            items: 2,
+                        }
+                    }
+                });
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 0) {
+                        $('.logo').addClass("sticky-img");
+                    } else {
+                        $('.logo').removeClass("sticky-img");
+                    }
+                });
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 0) {
+                        $('header').addClass("sticky-head");
+                    } else {
+                        $('header').removeClass("sticky-head");
+                    }
+                });
+
+                new WOW().init();
+                $('.info').mouseenter(function() {
+                    $('#popup').addClass('popup-view');
+                });
+                $('.info').mouseleave(function() {
+                    $('#popup').removeClass('popup-view');
+                });
+            });
+
+        </script>
+
+        <script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<script>
+      feather.replace()
+    </script>
+
+    <script>
+
+   $(window).on("load", function(e) {
+     $("#global-loader").fadeOut("fast");
+   });
+    </script>
+
+
+
+@yield('js')
+
+
+<script>
+
+$(window).on("load", function() {
+  var screensize = screen.width;
+  // alert(screensize);
+
+  if (screensize <= 1200) {
+    $(".event_award_section").css("display","none");
+    $(".event_award_section_mini").css("display","block");
+  }
+
+  if (screensize >= 1200) {
+    $(".event_award_section_mini").css("display","none");
+  }
+
+  if (screensize < 992) {
+    $("header").css("display","none");
+  }
+
+
+
+});
+</script>
+
+<script type="text/javascript">var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow13.png" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();
+</script>
+
+<script type="text/javascript">
+
+$(function(){
+$(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");
+        });
+});
+
+</script>
+
+</body>
+</html>

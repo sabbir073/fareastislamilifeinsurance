@@ -458,9 +458,30 @@ header .navbar ul li a{
 header .navbar ul li:first-child{
     border:none;
 }
-header .navbar ul li a:hover{
-    /* background: #000; */
+
+
+header .navbar ul li.col1>a:hover{
+  background: red;
 }
+header .navbar ul li.col2>a:hover{
+  background: #5189FF;
+}
+header .navbar ul li.col3>a:hover{
+  background: #C9BFFF;
+}
+header .navbar ul li.col4>a:hover{
+  background: #98A2E9;
+}
+header .navbar ul li.col5>a:hover{
+  background: #FF887B;
+}
+header .navbar ul li.col6>a:hover{
+  background: #B084E8;
+}
+header .navbar ul li.col7>a:hover{
+  background: #DD8AFF;
+}
+
 header .navbar ul li.hov-nav{
     position:relative;
 }
@@ -476,18 +497,22 @@ header .navbar ul li ul{
     width:180px;
 }
 #hov-nav li a{
-    padding:5px;
+    padding:5px 5px;
     font-size:16px;
+    color: #000 !important;
+
 }
 #hov-nav li{
-    border:none !important;
+    line-height: 2px;
+    background: #fff !important;
+    border-bottom: 1px solid #000;
 }
 #hov-nav li:hover{
-    background: #fff !important;
-    color: #000 !important;
+    
+    background: #AC7EEB !important;
 }
 #hov-nav li:hover a{
-    color:#000 !important;
+    color:#fff !important;
 }
 
 /*05-02-2020 end*/
@@ -644,7 +669,6 @@ header .navbar ul li ul{
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
 }
-
 
 .dropdown-toggle::after{
   display:none !important;
@@ -944,7 +968,7 @@ padding-top: 50px;
                             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul class="navbar-nav">
 
-                                <li class="nav-item">
+                                <li class="nav-item col1">
                                    <a class="nav-link" data-effect="Home" href="{{ route('homepage') }}">Home
 
                                    </a>
@@ -953,7 +977,7 @@ padding-top: 50px;
 
                                 @foreach ($all_menu as $menu)
 
-                                <li class="dropdown" style="padding: 13px 0; text-transform: uppercase;">
+                                <li class="dropdown col{{$menu->id}}" style="padding: 13px 0; text-transform: uppercase;">
 
                                     <a href="{{ $menu->link }}" id="drop1" target="_parent" style="font-size: 13.5px !important;" class="dropdown-toggle far_manu" role="button">
                                        {{ $menu->perent_menu_name }}
@@ -976,18 +1000,18 @@ padding-top: 50px;
 
 
 
-                                  {{-- <li class="nav-item">
+                                  {{-- <li class="nav-item col2">
                                      <a class="nav-link" href="{{ route('career') }}">Careers</a>
                                    </li>
 
-                                   <li class="nav-item">
+                                   <li class="nav-item col3">
                                       <a class="nav-link" href="{{ route('about') }}">About</a>
                                     </li> --}}
 
 
 
 
-                                    <li class="nav-item">
+                                    <li class="nav-item col7">
                                        <a class="nav-link" href="{{ route('contacts') }}">Contact Us
                                        </a>
                                      </li>

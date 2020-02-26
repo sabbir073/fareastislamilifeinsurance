@@ -63,6 +63,7 @@
 
 <style media="screen">
 
+
   @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
@@ -186,10 +187,18 @@
   }
 }
 
+
+/*Style added by Md Sabbir ahmed*/
+
 .navbar-nav li:hover{
-  background: #2d3436 !important;
+    background-image: linear-gradient(to right, transparent, transparent 50%, #2d3436 50%, #2d3436) !important;
+    background-position: 100% 100% !important;
+    background-size: 200% 100% !important;
+    transition: all .40s ease-in !important;
   border-bottom: none !important;
 }
+
+/*Style added by Md Sabbir ahmed*/
 
 .navbar-dark .navbar-nav .nav-link{
   font-size: 12px !important;
@@ -401,25 +410,6 @@ footer dl, ol, ul {
 		list-style: none;
 	}
 
-
-
-/*Style added by Md Sabbir ahmed*/
-
-.navbar-nav li:hover{
-    background-image: linear-gradient(to right, transparent, transparent 50%, #2d3436 50%, #2d3436) !important;
-    background-position: 100% 100% !important;
-    background-size: 200% 100% !important;
-    transition: all .40s ease-in !important;
-  border-bottom: none !important;
-}
-
-/*Style added by Md Sabbir ahmed*/
-
-.navbar-dark .navbar-nav .nav-link{
-  font-size: 12px !important;
-  text-transform: uppercase;
-}
-
 @media(max-width:768px){
     .footer-wrap h3 {
     margin-top: 27px;}
@@ -496,10 +486,12 @@ header .navbar ul li ul{
     background: #fff !important;
     color: #000 !important;
 }
-#hov-nav li a:hover{
-    color: #000 !important;
+#hov-nav li:hover a{
+    color:#000 !important;
 }
+
 /*05-02-2020 end*/
+
 
 /* Floating Social Media Bar Style Starts Here */
 
@@ -648,15 +640,14 @@ header .navbar ul li ul{
   opacity:.3;
   -webkit-transform-origin: top;
   transform-origin: top;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
   -webkit-transform: scale(1, 0);
   transition: all 0.3s linear;
   -webkit-transition: all 0.3s linear;
 }
 
+
 .dropdown-toggle::after{
-  display: none;
+  display:none !important;
 }
 
 /* nav hover effect */
@@ -885,113 +876,122 @@ padding-top: 50px;
 
 
 
-        <header class="bg-success">
-            <div class="container">
+                <header class="bg-success">
+                    <div class="no-class" style="margin: 0 70px;">
 
 
 
-                <div class="brand">
+                        <div class="brand">
 
-                @php
-                  $all_menu = App\MainMenu::all();
-                  $all_sub_menu = App\SubMenu::all();
-                @endphp
+                        @php
+                          $all_menu = App\MainMenu::all();
+                          $all_sub_menu = App\SubMenu::all();
+                        @endphp
 
-                  <a href="{{ route('homepage') }}">
-                    @foreach ($logos  = App\Logo::where('status',1)->get() as $logo)
-                        <img class="logo" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo">
-                        {{-- <img class="img-fluid" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo"> --}}
-                    @endforeach
-                </a>
-                </div>
-                <div class="navbar navbar-expand-lg navbar-dark far_nav">
-                    <a href="#" class="navbar-brand"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        <ul class="navbar-nav">
+                          <a href="{{ route('homepage') }}">
+                            @foreach ($logos  = App\Logo::where('status',1)->get() as $logo)
+                                <img class="logo" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo">
+                                {{-- <img class="img-fluid" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="Logo"> --}}
+                            @endforeach
+                        </a>
+                        </div>
 
-                        <li class="nav-item">
-                           <a class="nav-link" data-effect="Home" href="{{ route('homepage') }}">Home</a>
-                         </li>
+                    <img class="img-fluid hidden" src="https://res.cloudinary.com/onexa/image/upload/v1582544620/Final_1_oulatn.png" width="180px" height="150px" style="display:inline; margin: 12px 0px 0px 107px;">
 
-                        @foreach ($all_menu as $menu)
+                        <div class="navbar navbar-expand-lg navbar-dark far_nav pull-right">
+                            <a href="#" class="navbar-brand"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="navbar-nav">
 
-                        <li class="dropdown" style="padding: 13px 0; text-transform: uppercase;">
+                                <li class="nav-item">
+                                   <a class="nav-link" data-effect="Home" href="{{ route('homepage') }}">Home
 
-                            <a href="{{ $menu->link }}" id="drop1" target="_parent" style="font-size: 13.5px !important;" class="dropdown-toggle far_manu" role="button">
-                               {{ $menu->perent_menu_name }}
-                            </a>
-@if(App\SubMenu::where('parent_menu_id',$menu->id)->exists())
-                            <ul role="menu" id="hov-nav" class="dropdown-menu" aria-labelledby="drop1" style="margin-top: 40px;">
-                              @foreach ($all_sub_menu as $sub_menu)
-                                @if($sub_menu->parent_menu_id == $menu->id)
-                                <li role="presentation" style="padding: 9px; background: #1e272e;">
-                                  <a href="{{ $sub_menu->sub_menu_link }}" role="menuitem" style="font-size: 13.5px !important;">{{ $sub_menu->sub_menu_name }}</a>
+                                   </a>
+                                 </li>
+
+
+                                @foreach ($all_menu as $menu)
+
+                                <li class="dropdown" style="padding: 13px 0; text-transform: uppercase;">
+
+                                    <a href="{{ $menu->link }}" id="drop1" target="_parent" style="font-size: 13.5px !important;" class="dropdown-toggle far_manu" role="button">
+                                       {{ $menu->perent_menu_name }}
+
+                                    </a>
+        @if(App\SubMenu::where('parent_menu_id',$menu->id)->exists())
+                                    <ul role="menu" id="hov-nav" class="dropdown-menu" aria-labelledby="drop1" style="margin-top: 40px;">
+                                      @foreach ($all_sub_menu as $sub_menu)
+                                        @if($sub_menu->parent_menu_id == $menu->id)
+                                        <li role="presentation" style="padding: 9px; background: #1e272e;">
+                                          <a href="{{ $sub_menu->sub_menu_link }}" role="menuitem" style="font-size: 13.5px !important;">{{ $sub_menu->sub_menu_name }}</a>
+                                        </li>
+        @endif
+          @endforeach
+                                    </ul>
+                                      @endif
+
                                 </li>
-@endif
-  @endforeach
-                            </ul>
-                              @endif
-
-                        </li>
-                          @endforeach
+                                  @endforeach
 
 
 
-                          {{-- <li class="nav-item">
-                             <a class="nav-link" href="{{ route('career') }}">Careers</a>
-                           </li>
+                                  {{-- <li class="nav-item">
+                                     <a class="nav-link" href="{{ route('career') }}">Careers</a>
+                                   </li>
 
-                           <li class="nav-item">
-                              <a class="nav-link" href="{{ route('about') }}">About</a>
-                            </li> --}}
+                                   <li class="nav-item">
+                                      <a class="nav-link" href="{{ route('about') }}">About</a>
+                                    </li> --}}
 
 
 
 
-                            <li class="nav-item">
-                               <a class="nav-link" href="{{ route('contacts') }}">Contact Us</a>
-                             </li>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="{{ route('contacts') }}">Contact Us
+                                       </a>
+                                     </li>
 
-                        </ul>
+                                </ul>
 
 
 
-                        <div id="myNav" class="search_overlay">
-                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                          <div class="overlay-content">
+                                <div id="myNav" class="search_overlay">
+                                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                  <div class="overlay-content">
 
-                            <div class="container">
+                                    <div class="container">
 
-                              <div class="input-group">
-                                 <input type="text" class="form-control search_input" placeholder="Search">
-                                 <div class="input-group-append">
-                                   <button class="btn btn-success" type="button">
-                                     <i class="fa fa-search search_button"></i>
-                                   </button>
-                                 </div>
-                               </div>
+                                      <div class="input-group">
+                                         <input type="text" class="form-control search_input" placeholder="Search">
+                                         <div class="input-group-append">
+                                           <button class="btn btn-success" type="button">
+                                             <i class="fa fa-search search_button"></i>
+                                           </button>
+                                         </div>
+                                       </div>
+
+                                    </div>
+
+
+
+                                  </div>
+                                </div>
+
+
+                                <div class="search">
+                                    <a href="#" onclick="openNav()"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </div>
+
+
 
                             </div>
-
-
-
-                          </div>
                         </div>
-
-
-                        <div class="search">
-                            <a href="#" onclick="openNav()"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </div>
-
-
 
                     </div>
-                </div>
-            </div>
-        </header>
+                </header>
 
 
       <main>

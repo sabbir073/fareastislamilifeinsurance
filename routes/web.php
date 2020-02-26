@@ -242,6 +242,10 @@ Route::get('/dashboard/product/force/delete/{product_id}','ProductController@for
 Route::get('/dashboard/chairman','ManagementController@chairman')->name('chairman');
 //chairman_create
 Route::post('/dashboard/chairman/create','ManagementController@chairman_create')->name('chairman_create');
+// ceo
+Route::get('/dashboard/ceo','ManagementController@ceo')->name('ceo');
+//chairman_create
+Route::post('/dashboard/ceo/create','ManagementController@ceo_create')->name('ceo_create');
 //management_index
 Route::get('/dashboard/management','ManagementController@management_index')->name('management_index');
 //management_board_create
@@ -490,6 +494,7 @@ Route::any('/index','FrontendController@index')->name('homepage');
 Route::get('/management-committee','FrontendController@management_committee')->name('management_committee');
 // Route::get('/management-committee/{committee_id}','FrontendController@single_committee')->name('single_committee');
 Route::get('/chairman/message','FrontendController@chairman_message')->name('chairman_message');
+Route::get('/ceo/message','FrontendController@ceo_message')->name('ceo_message');
 
 // management_corporate
 Route::get('/corporate-management','FrontendController@management_corporate')->name('management_corporate');

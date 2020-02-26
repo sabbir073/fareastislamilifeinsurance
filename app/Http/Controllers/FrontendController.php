@@ -10,6 +10,7 @@ use App\Claim;
 use App\Gallery;
 use App\Promotion;
 use App\Corporate;
+use App\Ceo;
 use App\CorpCronicle;
 use App\Event;
 use App\Faq;
@@ -133,6 +134,13 @@ class FrontendController extends Controller
       $single_message = Chairman::latest()->paginate(1);
       // $single_message = Message::all();
       return view('frontend.messages.index',compact('single_message'));
+    }
+    // ceo_message
+    function ceo_message()
+    {
+      $single_message = Ceo::latest()->paginate(1);
+      // $single_message = Message::all();
+      return view('frontend.messages.ceo',compact('single_message'));
     }
 
     // board_of_directors

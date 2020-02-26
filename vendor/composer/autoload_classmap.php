@@ -13,6 +13,7 @@ return array(
     'App\\BenifitProduct' => $baseDir . '/app/BenifitProduct.php',
     'App\\Career' => $baseDir . '/app/Career.php',
     'App\\CareerApplication' => $baseDir . '/app/CareerApplication.php',
+    'App\\Ceo' => $baseDir . '/app/Ceo.php',
     'App\\Chairman' => $baseDir . '/app/Chairman.php',
     'App\\Claim' => $baseDir . '/app/Claim.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',

@@ -455,6 +455,7 @@ class ComposerStaticInit48d09b770488f828309eabd8b783f673
         'App\\BenifitProduct' => __DIR__ . '/../..' . '/app/BenifitProduct.php',
         'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
         'App\\CareerApplication' => __DIR__ . '/../..' . '/app/CareerApplication.php',
+        'App\\Ceo' => __DIR__ . '/../..' . '/app/Ceo.php',
         'App\\Chairman' => __DIR__ . '/../..' . '/app/Chairman.php',
         'App\\Claim' => __DIR__ . '/../..' . '/app/Claim.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

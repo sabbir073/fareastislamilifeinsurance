@@ -652,6 +652,44 @@ header .navbar ul li ul{
 
 /* nav hover effect */
 
+
+/* premium_calculator */
+.premium_cal{
+  margin-top : 100px !important;
+}
+
+.calculator_left_side {
+width: 100%;
+height: 100%;
+}
+
+.calculator_right_side:after{
+content: '';
+background: #747d8c;
+width: 2px;
+height: 62%;
+top: 20%;
+left: 8%;
+position: absolute;
+}
+
+.calculator_left_side img{
+margin-top: 115px;
+}
+
+.premium_calculator{
+border: 1px solid #2F3640;
+border-radius: 20px;
+box-shadow: 0px 0px 5px 8px rgba(0,0,0,0.17);
+padding: 0 0 50px 0;
+}
+
+.premium_calculator_title{
+padding-top: 100px;
+padding-bottom: 25px;
+}
+/* premium_calculator */
+
 @yield('css')
 
 {{-- --------------------------- --}}

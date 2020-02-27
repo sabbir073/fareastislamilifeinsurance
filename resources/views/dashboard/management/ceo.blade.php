@@ -73,33 +73,21 @@ CEO
 
                             <!-- product_photo   -->
 
-                            <label for="product_title">CEO Circle Photo</label>
+                            {{-- <label for="product_title">CEO Circle Photo</label> --}}
 
-                            <div class="row no-gutters">
-
-
-
-
-
+                            {{-- <div class="row no-gutters">
 
             								<label class="custom-file">
                                               <input type="file" id="file" name="circle_photo" class="custom-file-input">
                                               <span class="custom-file-control"></span>
                                             </label>
-
-
-            						</div>
+            						</div> --}}
 
                             <!-- product_photo   -->
 
-                            <label for="product_title">CEO Square Photo</label>
+                            {{-- <label for="product_title">CEO Square Photo</label> --}}
 
-                            <div class="row no-gutters">
-
-
-
-
-
+                            {{-- <div class="row no-gutters">
 
             								<label class="custom-file">
                                               <input type="file" id="file" name="square_photo" class="custom-file-input">
@@ -107,7 +95,7 @@ CEO
                                             </label>
 
 
-            						</div>
+            						</div> --}}
 
                             <!-- product_photo   -->
 

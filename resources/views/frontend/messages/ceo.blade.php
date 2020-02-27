@@ -2,10 +2,14 @@
 
 @section('css')
 
-.text_box p{
+  p{
+    color: #000;
+  }
+
+.ceo_message p{
   color: #000;
   text-align: justify;
-  font-size: 16px;
+  font-size: 22px;
   font-family: 'Ubuntu', sans-serif !important;
   padding: 0 !important;
 }
@@ -98,17 +102,103 @@
                 font-size: 2em;
             }
         }
+
+        #topbar{
+          background: #2d3436;
+          z-index: 1;
+          padding: 1px 0;
+        }
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 50px;
+  color: #66E12C;
+  font-weight: 700;
+}
+
+
+
+
+
 @endsection
 
 @section('content')
 
 
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="background: url(https://res.cloudinary.com/onexa/image/upload/v1582003352/86695775_167425011374183_7568987747247980544_n_hpmq4c.png);  background-size: contain; background-repeat: no-repeat;">
 
-<div class="messege_content">
+
+  @forelse ($single_message as $message)
+
+<section class="ceo_div">
+
+
+  <section class="ceo_header" style="margin-top: 84px;">
+      <img src="https://res.cloudinary.com/onexa/image/upload/v1580621324/images/s3_cgxujv.jpg" alt="Snow" class="img-fluid" style="float: right; width: 50%;">
+      <div class="top-left text-uppercase">Message From The <br> Chief Executive Office</div>
+  </section>
+
+
+  <section class="ceo_message" style="margin-top: 50%;">
+    <div class="container">
+
+    {!! html_entity_decode($message->chairman_message) !!}
+
+    </div>
+  </section>
+
+  <section class="ceo_footer">
+    <div class="row">
+    <div class="col-md-5 offset-md-1">
+
+
+
+      <div class="ceo_left" style="padding: 40px; width: 35%; margin-left: 5%;">
+        <div class="signature">
+          <img src="{{ asset('uploads/signature') }}/{{ $message->signature }}" class="img-fluid" alt="">
+        </div>
+        <div class="ceo_name">
+          {!! html_entity_decode($message->name) !!}
+        </div>
+        <div class="ceo_position">
+          {!! html_entity_decode($message->position) !!}
+        </div>
+        <div class="message_date">
+          <p>26 Dec 1996</p>
+        </div>
+        <div class="area">
+          <p>Dhaka</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div clah6ss="col-md-4 offset-md-2">
+      <div class="qr_code">
+        <img src="{{ asset('uploads/qr_code') }}/{{ $message->qr_code }}" style="width:75%; float: right;" class="img-fluid" alt="">
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+</section>
+
+@empty
+
+@endforelse
+
+
+
+{{-- <div class="messege_content">
       <div class="title">
               <h1>MESSEGE FROM <br>
                   THE CHAIRMAN
@@ -122,7 +212,6 @@
               <div class="img_box">
                   <img src="https://res.cloudinary.com/dhe6napl7/image/upload/v1581360767/clients/fareast/img/Untitled-4.png" alt="">
                   <h2>Md. Nazrul Islam</h2>
-                  {{-- <h2>{!! html_entity_decode($message->relationBetweenManagement->name) !!}</h2> --}}
                   <h2>Chairman</h2>
               </div>
               <div class="text_box">
@@ -136,7 +225,6 @@
                           </p>
                           <p>
 
-                              {{-- {{ $message->created_at->format('d M Y') }} --}}
 
                           </p>
                       </div>
@@ -153,7 +241,7 @@
         @endforelse
 
 
-    </div>
+    </div> --}}
 
   </div>
 

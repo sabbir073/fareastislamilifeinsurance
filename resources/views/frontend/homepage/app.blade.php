@@ -365,6 +365,7 @@ footer .newsletter input[type="text"] {
     padding: 14px 20px;
     border-radius: 50px;
     margin-top: 12px;
+    padding-bottom: 10px;
 }
 
 .newsletter .newsletter_submit_btn {
@@ -464,22 +465,22 @@ header .navbar ul li.col1>a:hover{
   background: red;
 }
 header .navbar ul li.col2>a:hover{
-  background: #5189FF;
+  background: #6D19EB;
 }
 header .navbar ul li.col3>a:hover{
-  background: #C9BFFF;
+  background: #AD078A;
 }
 header .navbar ul li.col4>a:hover{
-  background: #98A2E9;
+  background: #3C05FF;
 }
 header .navbar ul li.col5>a:hover{
-  background: #FF887B;
+  background: #2F14B8;
 }
 header .navbar ul li.col6>a:hover{
-  background: #B084E8;
+  background: #1D8C1D;
 }
 header .navbar ul li.col7>a:hover{
-  background: #DD8AFF;
+  background: #4D16AD;
 }
 
 header .navbar ul li.hov-nav{
@@ -509,7 +510,7 @@ header .navbar ul li ul{
 }
 #hov-nav li:hover{
     
-    background: #AC7EEB !important;
+    background: #f59120 !important;
 }
 #hov-nav li:hover a{
     color:#fff !important;
@@ -1074,14 +1075,24 @@ padding-top: 50px;
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="widget text_widget">
-                            <img class="footer_logo" src="https://res.cloudinary.com/onexa/image/upload/v1581311828/images/logo_qmzvfy.png" class="img-fluid" width="65%" alt="logo">
-                            <p>
-                                <a href="tel:+123-4567890" class="tel">+123 4567890</a>
-                                <a href="mailto:support@Tejarat.com" class="mail">Support@Tejarat.com</a>
-                                <span class="address">Dhaka, Bangladesh</span>
-                            </p>
-                        </div>
+                      <div class="widget widget--links">
+                        <h4 class="widget__title2">Company</h4>
+                        <ul class="links">
+
+                          @php
+
+                          $footer_widget_ones   = App\FooterMenu::where('footer_widget_id',1)->get();
+                          $footer_widget_twos   = App\FooterMenu::where('footer_widget_id',2)->get();
+                          $footer_widget_threes = App\FooterMenu::where('footer_widget_id',3)->get();
+
+                          @endphp
+
+                          @foreach ($footer_widget_ones as $footer_widget_one)
+                            <li><a href="{{ $footer_widget_one->link }}">{{ $footer_widget_one->footer_menu_name }}</a></li>
+                          @endforeach
+
+                        </ul>
+                    </div>
                     </div><!-- ends: .col-lg-3 -->
 
                     <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
@@ -1135,7 +1146,7 @@ padding-top: 50px;
             <div class="row">
               <div class="col-md-12">
                 <div class="far_moto text-center">
-                  <h5 class="text-white">ইসলামী শরি'আহ মোতাবেক পরিচালিত</h5>
+                  <img src="{{asset('frontend/img/Final.png')}}" alt="" style="height:100px; width:50%">
                 </div>
               </div>
 

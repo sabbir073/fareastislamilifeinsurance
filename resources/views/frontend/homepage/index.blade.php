@@ -404,11 +404,11 @@ z-index:999999;
 }
 
 .accordion_one .accordion-single h6 a[aria-expanded=false]:before, .accordion_two .accordion-single h6 a[aria-expanded=false]:before{
-  content: "+";
+  content: "+"; color:#fff; font-size:20px;padding-right:10px;
 }
 
 .accordion_one .accordion-single h6 a[aria-expanded=true]:before, .accordion_two .accordion-single h6 a[aria-expanded=true]:before{
-  content: "-";
+  content: "-"; color:#fff; font-size:20px;padding-right:10px;
 }
 
 
@@ -959,6 +959,99 @@ img.zoom {
 .product-slider .icon-box-three{
   overflow: hidden;
 }
+
+.accordion-single{
+  border-bottom: 2px solid !important;
+  padding: 15px;
+  padding-top: 15px !important;
+  padding-bottom: 5px !important;
+  background: #E6E6FF !important;
+}
+
+.accordion-contents{
+  color: #2f3542 !important;
+}
+
+.accordion-heading{
+  background: #db811a !important;
+}
+
+.accordion-heading a{
+  color: #FFF !important;
+  padding-top: 5px !important;
+  margin-left: 15px;
+}
+
+.accordion_one,accordion_two{
+  padding: 0px !important;
+}
+
+.awardtitle{
+  padding-top: 20px !important;
+}
+
+.p-bottom{
+  padding-bottom: 15px;
+}
+
+.buttonshadow:hover{
+  box-shadow: 20px 20px 50px grey;
+}
+
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
 @endsection
 
 @section('content')
@@ -1207,9 +1300,9 @@ img.zoom {
         <div class="service-item col-lg col-md-6 col-sm-12 " style="padding: 5px;">
 
 
-
+              {{--  aunshon  --}}
               <div class="card card-twelve hvr-push" style="border: 0;border-radius: 0 0 0 0;box-shadow: 0 5px 30px rgba(41,41,59,.6);">
-                <a href="#">
+                <a href="#open-modal">
                   <div class="card-body" style="padding: 0;">
                       <h6 class="text-uppercase text-white" style="background: #0083bf;margin: 0;font-weight: bold;padding: 7px;">Premium Calculator</h6>
                       <figure style="background:#0091d4; padding: 49px;">
@@ -1221,6 +1314,101 @@ img.zoom {
                 </div>
 
 
+                <div id="open-modal" class="modal-window">
+                  <div>
+                    <a href="#" title="Close" class="modal-close">Close</a>
+                    <div class="col-md-8 offset-md-2">
+
+                      <div class="premium_cal">
+    
+                      <!-- Default form login -->
+                      <form action="#" method="get" id="form">
+    
+                        <div class="form-group">
+                          <label for="dob">Date Of Birth</label>
+                          <input type="date" class="form-control" id="dob" aria-describedby="emailHelp">
+                        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                        <div class="form-group">
+                          <input type="text" disabled class="form-control" id="age" aria-describedby="emailHelp" value="" placeholder="Enter Your Age">
+                        </div>
+    
+                        <div class="form-group">
+                          <select class="form-control" name="" id="plan">
+                            <option value="0">Select One *</option>
+                          </select>
+                        </div>
+                        <div id="termDivSection">
+    
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control" name="" id="term">
+                            <option value="0">Terms And Policy *</option>
+                          </select>
+                        </div>
+    
+                        <div class="form-group">
+                          <select class="form-control" name="" id="mode">
+                            <option value="0">Mode Of Payment *</option>
+                          </select>
+                        </div>
+    
+    
+                                <div class="form-group">
+                                  <input id="sum" placeholder="Enter Sum Assured" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                </div>
+    
+    
+                                <div class="row">
+                                  <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-info">Calculate Premium</button>
+                                  </div>
+                                </div>
+    
+    
+                                <!-- Button trigger modal -->
+    
+    
+                      </form>
+                      <!-- Default form login -->
+    
+    
+    
+    
+    
+                      <div id="bimaRes" class="text-center">
+    
+                      </div>
+    
+    
+                      <!-- Button trigger modal -->
+                      {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                      </button> --}}
+    
+                      <!-- Modal -->
+    
+    
+    
+    
+    
+                    </div>
+    
+                  </div>
+                  </div>
+                    </div>
+                
+               
 
         </div>
         {{-- @endforeach --}}
@@ -1803,7 +1991,7 @@ img.zoom {
             <a href="{{ $promotion->link }}" class="hvr-grow">
 
 
-              <blockquote class="blockquote blockquote4 promo_block" style="background: linear-gradient(to right,{{ $promotion->left_grad }},{{ $promotion->right_grad }});">
+              <blockquote class="blockquote blockquote4 promo_block buttonshadow" style="background: linear-gradient(to right,{{ $promotion->left_grad }},{{ $promotion->right_grad }});">
                 <p>{{ $promotion->promotion_title }}</p>
               </blockquote>
 
@@ -2000,6 +2188,7 @@ img.zoom {
                   <div class="icon-box-three text-center" style="border: 2px solid #e4e8ed !important;">
 
                         <img src="{{ asset('uploads/awards') }}/{{ $award->thumbnail }}" class="hvr-bounce-in" alt="{{ $fareast_star->name }}">
+                        <h6 class="awardtitle">Bizz Award <br> 2020</h6>
 
                   </div><!-- ends: .icon-box -->
                 </a>
@@ -2046,7 +2235,7 @@ img.zoom {
                         <div class="col-lg-8 offset-lg-2">
                             <div class="subscribe-contents text-center">
                                 <h2>Get News Update Instantly! <br> <span>Request a Call Back Now</span></h2>
-                                <form action="#" class="subscribe-form-two p-left-50 p-right-50">
+                                <form action="#" class="subscribe-form-two p-left-50 p-right-50 p-bottom">
                                     <div>
                                         <input type="text" class="form-control" placeholder="Enter your email address" aria-label="Username">
                                         <button class="btn btn-primary">Request Now</button>
@@ -2417,6 +2606,8 @@ $('.product-slider').owlCarousel({
 
 <!--===============================================================================================-->
 <script src="{{ asset('frontend/popup/js/main.js') }}"></script>
+
+
 
 
 

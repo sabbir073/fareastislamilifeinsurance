@@ -2,200 +2,179 @@
 
 @section('css')
 
-  .head-text {
-        width: 50%;
-        height: 200px;
-        float: left;
-    }
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-    .head-text h1 {
-        font-weight: normal;
-        color: #00a651;
-        padding: 20px;
-        font-size: 40px;
-        margin-top: 100px;
-        margin-left: 100px;
-
-    }
-
-    .members {
-        overflow: hidden;
-        padding-top: 5%;
-        {{-- background: #F5F7FC; --}}
-        background: url("https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png") 0% 0% / cover no-repeat;
-    }
-
-    .member {
-        width: 25%;
-        float: left;
-        padding: 2%;
-        text-align: center;
-    }
-
-    .member h4,
-    p {
-        margin: 5px;
-    }
-
-    .img_member{
-        width: 242px !important;
-        height: 242px !important;
-        margin: auto;
-    }
-
-    .mem-item {
-        width: 100%;
-        overflow: hidden;
-    }
-
-
-
-    /*responsive*/
-    @media screen and (max-width: 768px) {
-        .head-text {
-            width: 100%;
+  body{
+            background: url("https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png") 0% 0% / cover no-repeat;
         }
-        .head-text h1{
+        #cr-banner{
+            border: 1px solid #aaa;
+            padding-bottom: 20px;
+        }
+        head-text{
+            position: relative;
+
+        }
+        h1{
+            position: absolute;
+            {{-- bottom: 80px; --}}
+            font-size: 42px;
+            color: #28A745;
+        }
+        .chairman-img img{
             margin-top: 50px;
-        }
-
-        .member {
-            width: 45%;
-        }
-
-        .mem-item:last-child .member{
-            float: none;
-            display: inline-block;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        .member {
-            width: 45%;
-        }
-
-        .member img {
             width: 100%;
-            height: 300px;
         }
-    }
-
-    @media screen and (max-width: 420px) {
-        .head-text {
-            height: auto;
-        }
-
-        .member {
-            width: 50%;
-        }
-
-        .member img {
-            width: 242px !important;
-            height: 242px !important;
-        }
-        .head-text h1{
-            margin-left: 0px;
-            font-size: 1.5em;
+        .detail{
             text-align: center;
         }
-        .members {
-            overflow: hidden;
-            padding-top: 20%;
+        .detail h2{
+            font-weight: 600;
+            margin-bottom: 10px;
         }
-    }
+        .detail p{
+            font-size: 18px;
+        }
+        .mem-item{
+            width: 23%;
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+        }
+        .mem-img img{
+            width: 100%;
+            box-shadow:  0px 0px 10px grey;
+        }
+        .mem-detail{
+            text-align: center;
+        }
+        .mem-detail h2{
+            font-size: 25px;
+        }
+        .mem-detail p{
+            font-size: 18px;
+        }
 
-    .far_man_com{
-      padding: 0;
-    }
+        #topbar{
+          background: #2d3436;
+          z-index: 1;
+          padding: 1px 0;
+        }
 
-    .far_man_com img{
-      margin-bottom: 0;
-    }
+        .detail p:nth-child(1){
+          font-weight: 600 !important;
+          font-size: 30px;
+          color: #212529;
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+        }
 
-    .far_man_com h6{
-      margin-bottom: 0;
-      color: #000;
-    }
+        .detail p:nth-child(2){
+          font-weight: 600 !important;
+          font-size: 18px;
+          color: #212529;
+        }
 
+        .icon-box-15{
+          padding:0px;
+        }
+
+        .icon-box-15 img{
+          margin-bottom: 15px;
+        }
+
+        .icon-box-15 h6{
+          margin-bottom: 0;
+        }
 
 @endsection
 
 @section('content')
 
 
-<section class="man_comm">
-  <div class="members">
+<section class="">
 
-      <div class="mem-item">
-          <div class="head-text">
-              <h1>Managment Committe</h1>
+  <div class="content-block content-block--12">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-5 margin-md-60">
+                  <h1>BOARD OF DIRECTORS</h1>
+              </div>
+              <div class="col-lg-6 offset-lg-1">
+
+                  <img src="https://newfareast.xubisoft.com/uploads/chairman/1.png" alt="">
+
+              </div>
           </div>
-
-
-        @foreach ($management_commitees as $management_commitee)
-
-          <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-
-            <div class="member">
-                {{-- <img src="{{ asset('uploads/management') }}/{{ $management->photo }}" class="img-fluid img_member" alt="">
-                <h4>{!! html_entity_decode($management->name) !!}</h4>
-                <p>{{ ($management->relationBetweenManagementBoard->management_board) }}</p> --}}
-                <div class="icon-box icon-box-15 text-center far_man_com">
-                    <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
-                    <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
-                    <p class="text-dark">Totam rem aperiam.</p>
-                </div>
-            </div>
-
-          </a>
-
-
-
-        @endforeach
-
-
-
-
-
-
       </div>
+  </div><!-- ends: .content-block -->
+
+  </section>
 
 
 
-                      <!-- Extra large modal START-->
+
+      <div id="board-mem">
+          <div class="container">
+            
+              <div class="row">
+                @foreach ($management_commitees as $management_commitee)
+
+                  <div class="col-md-3" >
+                    <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+                      <div class="icon-box icon-box-15 text-center far_board">
+                          <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
+                          <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
+                          <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
+                      </div>
+                    </a>
+
+                  </div>
 
 
-                      <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                          <div class="modal-content">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-md-10 offset-md-1">
-                                  <div class="far_modal p-5">
-                                    <div class="far_img text-center">
-                                      <img src="https://fareast.xubisoft.com/uploads/management/3.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="far_para pt-2">
-                                      <p class="text-justify text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    </div>
-                                  </div>
 
+                  <!-- Extra large modal START-->
+
+
+                  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                              <div class="far_modal p-5">
+                                <div class="far_img text-center">
+                                  <img src="{{ asset('uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" alt="">
+                                </div>
+                                <div class="far_para pt-2">
+                                  <h2 class="text-center text-dark">{!! html_entity_decode($management_commitee->name) !!}</h2>
+                                  <p class="text-justify text-dark">{!! html_entity_decode($management_commitee->speaks) !!}</p>
                                 </div>
                               </div>
+
                             </div>
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
 
-                      <!-- Extra large modal END-->
+                  <!-- Extra large modal END-->
+
+                @endforeach
 
 
 
-  </div>
-</section>
 
 
+
+
+
+
+              </div>
+
+          </div>
+      </div>
 
 
 
@@ -216,7 +195,6 @@ $('.committee').click(function(e){
 });
 
 </script> --}}
-
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");

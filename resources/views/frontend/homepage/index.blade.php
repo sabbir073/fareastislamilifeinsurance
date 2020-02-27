@@ -1615,7 +1615,7 @@ img.zoom {
 
                 @forelse ($notices as $notice)
 
-                  <a href="{{ url('notice-single') }}/{{ $notice->id }}" style="text-decoration: none; text-align: left;" class="text-dark">
+                  <a href="{{ url('show/notice/pdf') }}/{{ $notice->id }}/{{ $notice->noticePdf }}" style="text-decoration: none; text-align: left;" class="text-dark">
 
                     <div class="post-item hvr-shrink" style="border: 1px solid #e4e8ed ;padding: 10px;">
 
@@ -1671,7 +1671,7 @@ img.zoom {
                   </li> --}}
 
                 <li class="claim-li">
-                  <a href="{{ $claim->id }}" style="text-decoration: none; text-align: left;" class="text-dark fareast-pointer">
+                  <a href="{{url("show/claim/pdf")}}/{{ $claim->id }}/{{ $claim->claimPdf }}" style="text-decoration: none; text-align: left;" class="text-dark fareast-pointer">
                     {{-- --------------------------- --}}
                     <blockquote class="blockquote blockquote1 news-block">
                         <p>{!! html_entity_decode(Str::limit($claim->claim,40)) !!}</p>

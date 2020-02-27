@@ -34,17 +34,35 @@ class ClaimController extends Controller
       $request->validate([
         'icon'          =>'required',
         'claim'          =>'required',
+        'claimDate'          =>'required',
+        'claimPdf'          =>'required|mimes:pdf,docx|max:20000'
       ]);
 
 
-      Claim::insert([
+      $lastId = Claim::insertGetId([
         'icon'      =>$request->icon,
         'claim'     =>$request->claim,
+        'claimDate'     =>$request->claimDate,
+        'claimPdf'     =>"default.pdf",
         'created_at'=>Carbon::now(),
       ]);
 
+      if ($request->file('claimPdf')) {
+      $photo = $request->claimPdf;
+      $photoName = $lastId . '.' . $photo->extension();
+      $photo->move(base_path("public/frontend/claim_file/"),$photoName);
+      Claim::findOrFail($lastId)->update([
+          'claimPdf' => $photoName,
+      ]);
+      // echo $photoName;
+      }
+
       Alert::toast('CLAIM ADDED','success');
       return back();
+    }
+
+    function showclaimpdf($id , $pdf){
+      return response()->file(base_path("public/frontend/claim_file/".$pdf));
     }
 
     // all_claims

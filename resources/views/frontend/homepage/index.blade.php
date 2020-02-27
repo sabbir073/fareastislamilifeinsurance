@@ -1012,9 +1012,9 @@ img.zoom {
           <a href="{{ $popup->link }}">
             <div class="login100-pic">
     					<img src="{{ asset('uploads/popup') }}/{{ $popup->photo }}" class="img-fluid" alt="IMG">
-                <div class="toDateDiv" style="display:none;">
+                {{-- <div class="toDateDiv" style="display:none;">
                   {{ $toDate }}
-                </div>
+                </div> --}}
                 <div class="aunCounDown">
                 <p id="demoaun"></p>
               </div>

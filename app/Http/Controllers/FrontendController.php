@@ -86,7 +86,7 @@ class FrontendController extends Controller
       $promotions           = Promotion::latest()->get();
 
       // echo $popups[0]->toDate->format('M');
-      $toDate = Carbon::createFromFormat('Y-m-d', $popups[0]->toDate)->format('M d, Y');
+      // $toDate = Carbon::createFromFormat('Y-m-d', $popups[0]->toDate)->format('M d, Y');
       // echo Carbon::createFromFormat('m', $popups[0]->toDate)->format('M');;
 
       return view('frontend.homepage.index',compact('toDate','top_header','popups','galleries','promotions','claims','products','fareast_stars','faqs','events','notices','newses','awards','corporates','sliders','maps','quick_services'));

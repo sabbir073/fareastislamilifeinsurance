@@ -1,7 +1,6 @@
 @extends('frontend.homepage.app')
 
 @section('css')
-{{ error_reporting(0) }}
 
 {{----------------- --}}
 
@@ -1012,7 +1011,6 @@ img.zoom {
 
           <a href="{{ $popup->link }}">
             <div class="login100-pic">
-    				<!-- <div class="login100-pic js-tilt" data-tilt> -->
     					<img src="{{ asset('uploads/popup') }}/{{ $popup->photo }}" class="img-fluid" alt="IMG">
                 <div class="toDateDiv" style="display:none;">
                   {{ $toDate }}

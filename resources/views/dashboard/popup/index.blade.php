@@ -74,6 +74,17 @@ ADD POPUP
 
 
             						    </div>
+                            <div class="row no-gutters">
+
+
+                              <label>From Date</label>
+                              <input type="date" name="fromDate" class="form-control">
+
+                              <label>To Date</label>
+                              <input type="date" name="toDate" class="form-control">
+
+
+            						    </div>
 
 
                             <label for="product_title">Popup Link</label>

@@ -33,6 +33,7 @@ class NoticeController extends Controller
 
       $request->validate([
         'notice_title'          => 'required',
+        'noticePdf'          => 'required|mimes:pdf,docx|max:20000',
         'notice_details'  => 'required',
         'photo'  => 'required',
 
@@ -41,6 +42,7 @@ class NoticeController extends Controller
 
       $last_inserted_id     =Notice::insertGetId([
         'notice_title'      =>$request->notice_title,
+        'noticePdf'      =>"default.pdf",
         'notice_details'    =>$request->notice_details,
         'photo'             =>$request->photo,
         'created_at'        =>Carbon::now(),
@@ -54,10 +56,24 @@ class NoticeController extends Controller
            Notice::find($last_inserted_id)->update([
            'photo'           => $photo_name,
           ]);
-          }
+      }
+
+      if ($request->file('noticePdf')) {
+      $photo = $request->noticePdf;
+      $photoName = $last_inserted_id . '.' . $photo->extension();
+      $photo->move(base_path("public/frontend/notice_file/"),$photoName);
+      Notice::findOrFail($last_inserted_id)->update([
+          'noticePdf' => $photoName,
+      ]);
+      // echo $photoName;
+      }
 
       Alert::toast('ADDED','success');
       return back();
+    }
+
+    function shownoticepdf($id , $pdf){
+      return response()->file(base_path("public/frontend/notice_file/".$pdf));
     }
 
 

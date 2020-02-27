@@ -16,6 +16,7 @@ class CreateNoticesTable extends Migration
         Schema::create('notices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('notice_title');
+            $table->stirng('noticePdf');
             $table->longText('notice_details');
             $table->string('photo');
             $table->softDeletes();

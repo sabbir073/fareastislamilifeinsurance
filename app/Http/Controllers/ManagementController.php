@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\ManagementBoard;
 use App\Management;
+use App\Ceo;
 use App\Chairman;
 use Carbon\Carbon;
 use Alert;
@@ -26,6 +27,12 @@ class ManagementController extends Controller
     function chairman()
     {
       return view('dashboard.management.chairman');
+    }
+
+    // chairman
+    function ceo()
+    {
+      return view('dashboard.management.ceo');
     }
 
     // chairman_create
@@ -90,6 +97,77 @@ class ManagementController extends Controller
                            $photo_name       =  $last_inserted_id . "." . $photo_extension;
                            Image::make($photo_upload)->resize(202,202)->save(base_path('public/uploads/qr_code/'.$photo_name),100);
                            Chairman::find($last_inserted_id)->update([
+                           'qr_code'       => $photo_name,
+                          ]);
+                          }
+
+
+      Alert::toast('ADDED ' . 'success');
+      return back();
+    }
+
+    // chairman_create
+    function ceo_create(Request $request)
+    {
+
+      $request->validate([
+        'name'                  => 'required',
+        'chairman_message'      => 'required',
+        'position'              => 'required',
+      ]);
+
+
+      $last_inserted_id = Ceo::insertGetId($request->except('_token'));
+
+
+            if ($request->hasFile('circle_photo')) {
+                 $photo_upload     =  $request ->circle_photo;
+                 $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                 $photo_name       =  $last_inserted_id . "." . $photo_extension;
+                 Image::make($photo_upload)->resize(250,250)->save(base_path('public/uploads/ceo/'.$photo_name),100);
+                 Ceo::find($last_inserted_id)->update([
+                 'circle_photo'           => $photo_name,
+                ]);
+                }
+
+            if ($request->hasFile('square_photo')) {
+                 $photo_upload     =  $request ->square_photo;
+                 $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                 $photo_name       =  $last_inserted_id . "." . $photo_extension;
+                 Image::make($photo_upload)->resize(242,281)->save(base_path('public/uploads/ceo/'.$photo_name),100);
+                 Ceo::find($last_inserted_id)->update([
+                 'square_photo'           => $photo_name,
+                ]);
+                }
+
+            if ($request->hasFile('long_photo')) {
+                 $photo_upload     =  $request ->long_photo;
+                 $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                 $photo_name       =  $last_inserted_id . "." . $photo_extension;
+                 Image::make($photo_upload)->resize(540,610)->save(base_path('public/uploads/ceo/'.$photo_name),100);
+                 Ceo::find($last_inserted_id)->update([
+                 'long_photo'           => $photo_name,
+                ]);
+                }
+
+                // signature
+                      if ($request->hasFile('signature')) {
+                           $photo_upload     =  $request ->signature;
+                           $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                           $photo_name       =  $last_inserted_id . "." . $photo_extension;
+                           Image::make($photo_upload)->resize(102,70)->save(base_path('public/uploads/signature/'.$photo_name),100);
+                           Ceo::find($last_inserted_id)->update([
+                           'signature'       => $photo_name,
+                          ]);
+                          }
+
+                // qr_code
+                      if ($request->hasFile('qr_code')) {
+                           $photo_upload     =  $request ->qr_code;
+                           $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+                           $photo_name       =  $last_inserted_id . "." . $photo_extension;
+                           Image::make($photo_upload)->resize(202,202)->save(base_path('public/uploads/qr_code/'.$photo_name),100);
+                           Ceo::find($last_inserted_id)->update([
                            'qr_code'       => $photo_name,
                           ]);
                           }

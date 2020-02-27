@@ -223,6 +223,7 @@
   <ul class="br-menu-sub nav flex-column">
      <li class="nav-item hvr-forward"><a href="{{ route('management_index') }}" class="nav-link">Add Management</a></li>
      <li class="nav-item hvr-forward"><a href="{{ route('chairman') }}" class="nav-link">Chairman</a></li>
+     <li class="nav-item hvr-forward"><a href="{{ route('ceo') }}" class="nav-link">Ceo</a></li>
      <li class="nav-item hvr-forward"><a href="{{ route('boardofmanagement') }}" class="nav-link">Board Of Directors</a></li>
      <li class="nav-item hvr-forward"><a href="{{ route('managementcommitee') }}" class="nav-link">Management Committee</a></li>
      <li class="nav-item hvr-forward"><a href="{{ route('corporatemanagement') }}" class="nav-link">Corporate Management</a></li>

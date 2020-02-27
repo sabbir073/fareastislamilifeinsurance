@@ -142,51 +142,50 @@
       <div id="board-mem">
           <div class="container">
               <div class="row">
+
                 @foreach ($board_of_directors as $board_of_directors)
 
-                  <div class="col-md-3">
-                    <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-                      <div class="icon-box icon-box-15 text-center far_board">
-                          <img src="{{ asset('/uploads/management') }}/{{ $board_of_directors->photo }}" class="img-fluid" style="width: 100%" alt="">
+                  <div class="col-md-3 aunModalFrom">
+                      <div class="aunModalFromDiv icon-box icon-box-15 text-center far_board">
+                        <a class="" href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+                          <img src="{{ asset('/uploads/management') }}/{{ $board_of_directors->photo }}" class="img-fluid imgaunfrom" style="width: 100%" alt="">
+                        </a>
                           <h6>{!! html_entity_decode($board_of_directors->name) !!}</h6>
+                          <div style="display: none;">{!! html_entity_decode($board_of_directors->speaks) !!}</div>
                           <p class="text-dark">{!! html_entity_decode(Str::limit($board_of_directors->speaks,10)) !!}</p>
                       </div>
-                    </a>
 
                   </div>
 
+                @endforeach
+
+                <!-- Extra large modal START-->
 
 
-                  <!-- Extra large modal START-->
-
-
-                  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content">
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                              <div class="far_modal p-5">
-                                <div class="far_img text-center">
-                                  <img src="{{ asset('uploads/management') }}/{{ $board_of_directors->photo }}" class="img-fluid" alt="">
-                                </div>
-                                <div class="far_para pt-2">
-                                  <h2 class="text-center text-dark">{!! html_entity_decode($board_of_directors->name) !!}</h2>
-                                  <p class="text-justify text-dark">{!! html_entity_decode($board_of_directors->speaks) !!}</p>
-                                </div>
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content" style="border: 5px solid #000;">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-10 offset-md-1">
+                            <div class="far_modal p-5">
+                              <div class="far_img text-right">
+                                <img id="aunModalToImg" src="" class="img-fluid" alt="">
                               </div>
-
+                              <div id="aunModalTo" class="far_para pt-2">
+                                <h2 id="aunModalToh" class="text-right text-dark"></h2>
+                                <p id="aunModalTod" class="text-justify text-dark"></p>
+                              </div>
                             </div>
+
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <!-- Extra large modal END-->
-
-                @endforeach
-
+                <!-- Extra large modal END-->
 
 
 
@@ -219,6 +218,25 @@ $('.committee').click(function(e){
 });
 
 </script> --}}
+
+<script>
+
+  $('.aunModalFrom').click((e)=>{
+    let target = e.target;
+    if (target.classList.contains('imgaunfrom')) {
+        let imageSrc = e.target.src;
+        let ph = target.parentElement.parentElement.childNodes[3].innerHTML;
+        let pd = target.parentElement.parentElement.childNodes[5].innerHTML;
+
+        document.getElementById('aunModalToImg').src = imageSrc;
+        document.getElementById('aunModalToh').innerHTML = ph;
+        document.getElementById('aunModalTod').innerHTML = pd;
+    }
+
+  });
+
+</script>
+
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");

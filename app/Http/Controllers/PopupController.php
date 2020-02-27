@@ -48,6 +48,8 @@ class PopupController extends Controller
       $last_inserted_id     = Popup::insertGetId([
         'photo'             =>$request->photo,
         'link'              =>$request->link,
+        'fromDate'              =>$request->fromDate,
+        'toDate'              =>$request->toDate,
         'created_at'        => Carbon::now(),
       ]);
 

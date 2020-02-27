@@ -15,16 +15,6 @@
             position: relative;
 
         }
-        h1{
-            position: absolute;
-            {{-- bottom: 80px; --}}
-            font-size: 42px;
-            color: #28A745;
-        }
-        .chairman-img img{
-            margin-top: 50px;
-            width: 100%;
-        }
         .detail{
             text-align: center;
         }
@@ -59,6 +49,7 @@
           background: #2d3436;
           z-index: 1;
           padding: 1px 0;
+          position:relative;
         }
 
         .detail p:nth-child(1){
@@ -86,129 +77,89 @@
         .icon-box-15 h6{
           margin-bottom: 0;
         }
+        main{
+          margin-top:85px;
+        }
 
 @endsection
-
 
 @section('content')
 
 
-<section class="">
-
-
-            <div class="member aunModalFrom">
-                {{-- <img src="{{ asset('uploads/management') }}/{{ $management->photo }}" class="img-fluid img_member" alt="">
-                <h4>{!! html_entity_decode($management->name) !!}</h4>
-                <p>{{ ($management->relationBetweenManagementBoard->management_board) }}</p> --}}
-                <div class="icon-box icon-box-15 text-center far_man_com aunModalFromDiv">
-                  <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-                    <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid imgaunfrom" style="width: 100%" alt="">
-                  </a>
-                    <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
-                    <div style="display: none;">{!! html_entity_decode($management_commitee->speaks) !!}</div>
-                    <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
-                </div>
-            </div>
-
-
-  <div class="content-block content-block--12">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-lg-5 margin-md-60">
-                  <h1>BOARD OF DIRECTORS</h1>
-              </div>
-              <div class="col-lg-6 offset-lg-1">
-
-                  <img src="https://newfareast.xubisoft.com/uploads/chairman/1.png" alt="">
-
-              </div>
-          </div>
+<section class="m-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+        <h1 class="text-uppercase">management committee</h1>
+        </div>
       </div>
-  </div><!-- ends: .content-block -->
-
-  </section>
-
-
+    </div>
+  </div>
+</section>
 
 
-      <div id="board-mem">
-          <div class="container">
-            
-              <div class="row">
-                @foreach ($management_commitees as $management_commitee)
+<div id="board-mem" style="margin: 50px 0 0 0;">
+  <div class="container">
+    
+      <div class="row">
+        @foreach ($management_commitees as $management_commitee)
 
-                  <div class="col-md-3" >
-                    <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-                      <div class="icon-box icon-box-15 text-center far_board">
-                          <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
-                          <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
-                          <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
-                      </div>
-                    </a>
+          <div class="col-md-3">
+            <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+              <div class="icon-box icon-box-15 text-center far_board">
+                  <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
+                  <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
+                  <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
+              </div>
+            </a>
 
-                  </div>
+          </div>
 
 
 
-                  <!-- Extra large modal START-->
+          <!-- Extra large modal START-->
 
 
-                      <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                          <div class="modal-content">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-md-10 offset-md-1">
-                                  <div class="far_modal p-5">
-                                    <div class="far_img text-center">
-                                      <img id="aunModalToImg" src="" class="img-fluid" alt="">
-                                    </div>
-                                    <div id="aunModalTo" class="far_para pt-2">
-                                      <h2 id="aunModalToh" class="text-center text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</h2>
-                                      <p id="aunModalTod" class="text-justify text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</p>
-                                    </div>
-                                  </div>
-
-
-                  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content">
-                        <div class="container">
-                          <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                              <div class="far_modal p-5">
-                                <div class="far_img text-center">
-                                  <img src="{{ asset('uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" alt="">
-                                </div>
-                                <div class="far_para pt-2">
-                                  <h2 class="text-center text-dark">{!! html_entity_decode($management_commitee->name) !!}</h2>
-                                  <p class="text-justify text-dark">{!! html_entity_decode($management_commitee->speaks) !!}</p>
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
+          <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                      <div class="far_modal p-5">
+                        <div class="far_img text-center">
+                          <img src="{{ asset('uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="far_para pt-2">
+                          <h2 class="text-center text-dark">{!! html_entity_decode($management_commitee->name) !!}</h2>
+                          <p class="text-justify text-dark">{!! html_entity_decode($management_commitee->speaks) !!}</p>
                         </div>
                       </div>
+
                     </div>
                   </div>
-
-                  <!-- Extra large modal END-->
-
-                @endforeach
-
-
-
-
-
-
-
-
-
+                </div>
               </div>
-
+            </div>
           </div>
+
+          <!-- Extra large modal END-->
+
+        @endforeach
+
+
+
+
+
+
+
+
+
       </div>
+
+  </div>
+</div>
 
 
 
@@ -254,30 +205,6 @@ span.onclick = function() {
 
 <script type="text/javascript">
   $(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
-</script>
-
-<script>
-
-  $('.aunModalFrom').click((e)=>{
-    let target = e.target;
-    if (target.classList.contains('imgaunfrom')) {
-        let imageSrc = e.target.src;
-        let ph = target.parentElement.parentElement.childNodes[3].innerHTML;
-        let pd = target.parentElement.parentElement.childNodes[5].innerHTML;
-
-        document.getElementById('aunModalToImg').src = imageSrc;
-        document.getElementById('aunModalToh').innerHTML = ph;
-        document.getElementById('aunModalTod').innerHTML = pd;
-
-        console.clear();
-        console.log(target);
-        // console.log(imageSrc);
-        // console.log(ph);
-        // console.log(pd);
-    }
-
-  });
-
 </script>
 
 @endsection

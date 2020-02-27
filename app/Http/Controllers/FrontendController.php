@@ -89,7 +89,7 @@ class FrontendController extends Controller
       // $toDate = Carbon::createFromFormat('Y-m-d', $popups->toDate)->format('M d, Y');
       // echo Carbon::createFromFormat('m', $popups[0]->toDate)->format('M');;
       // echo $popups;
-      return view('frontend.homepage.index',compact('toDate','top_header','popups','galleries','promotions','claims','products','fareast_stars','faqs','events','notices','newses','awards','corporates','sliders','maps','quick_services'));
+      return view('frontend.homepage.index',compact('top_header','popups','galleries','promotions','claims','products','fareast_stars','faqs','events','notices','newses','awards','corporates','sliders','maps','quick_services'));
     }
 
     // messages

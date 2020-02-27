@@ -134,20 +134,21 @@
 
         @foreach ($management_commitees as $management_commitee)
 
-          <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
 
-            <div class="member">
+            <div class="member aunModalFrom">
                 {{-- <img src="{{ asset('uploads/management') }}/{{ $management->photo }}" class="img-fluid img_member" alt="">
                 <h4>{!! html_entity_decode($management->name) !!}</h4>
                 <p>{{ ($management->relationBetweenManagementBoard->management_board) }}</p> --}}
-                <div class="icon-box icon-box-15 text-center far_man_com">
-                    <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
+                <div class="icon-box icon-box-15 text-center far_man_com aunModalFromDiv">
+                  <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+                    <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid imgaunfrom" style="width: 100%" alt="">
+                  </a>
                     <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
-                    <p class="text-dark">Totam rem aperiam.</p>
+                    <div style="display: none;">{!! html_entity_decode($management_commitee->speaks) !!}</div>
+                    <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
                 </div>
             </div>
 
-          </a>
 
 
 
@@ -173,11 +174,11 @@
                                 <div class="col-md-10 offset-md-1">
                                   <div class="far_modal p-5">
                                     <div class="far_img text-center">
-                                      <img src="https://fareast.xubisoft.com/uploads/management/3.jpg" class="img-fluid" alt="">
+                                      <img id="aunModalToImg" src="" class="img-fluid" alt="">
                                     </div>
-                                    <div class="far_para pt-2">
-                                      <p class="text-justify text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <div id="aunModalTo" class="far_para pt-2">
+                                      <h2 id="aunModalToh" class="text-center text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</h2>
+                                      <p id="aunModalTod" class="text-justify text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</p>
                                     </div>
                                   </div>
 
@@ -242,6 +243,30 @@ span.onclick = function() {
 
 <script type="text/javascript">
   $(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
+</script>
+
+<script>
+
+  $('.aunModalFrom').click((e)=>{
+    let target = e.target;
+    if (target.classList.contains('imgaunfrom')) {
+        let imageSrc = e.target.src;
+        let ph = target.parentElement.parentElement.childNodes[3].innerHTML;
+        let pd = target.parentElement.parentElement.childNodes[5].innerHTML;
+
+        document.getElementById('aunModalToImg').src = imageSrc;
+        document.getElementById('aunModalToh').innerHTML = ph;
+        document.getElementById('aunModalTod').innerHTML = pd;
+
+        console.clear();
+        console.log(target);
+        // console.log(imageSrc);
+        // console.log(ph);
+        // console.log(pd);
+    }
+
+  });
+
 </script>
 
 @endsection

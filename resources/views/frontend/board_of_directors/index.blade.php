@@ -142,6 +142,7 @@
       <div id="board-mem">
           <div class="container">
               <div class="row">
+
                 @foreach ($board_of_directors as $board_of_directors)
 
                   <div class="col-md-3 aunModalFrom">
@@ -163,17 +164,17 @@
 
                 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
+                    <div class="modal-content" style="border: 5px solid #000;">
                       <div class="container">
                         <div class="row">
                           <div class="col-md-10 offset-md-1">
                             <div class="far_modal p-5">
-                              <div class="far_img text-center">
+                              <div class="far_img text-right">
                                 <img id="aunModalToImg" src="" class="img-fluid" alt="">
                               </div>
                               <div id="aunModalTo" class="far_para pt-2">
-                                <h2 id="aunModalToh" class="text-center text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</h2>
-                                <p id="aunModalTod" class="text-justify text-dark">isdhfsdfhufishdfiuhsduifhuisdhfusdhfusdhfhsdu</p>
+                                <h2 id="aunModalToh" class="text-right text-dark"></h2>
+                                <p id="aunModalTod" class="text-justify text-dark"></p>
                               </div>
                             </div>
 

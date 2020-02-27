@@ -547,6 +547,9 @@ Route::get('/corporate-information','FrontendController@corporate_information')-
 //corporate_information
 Route::get('/corporate-chronicle','FrontendController@corporate_chronicle')->name('corporate_chronicle');
 
+//business_performance
+Route::get('/business-performance','FrontendController@business_performance')->name('business_performance');
+
 //notices
 Route::get('/notices','FrontendController@notices')->name('notices');
 

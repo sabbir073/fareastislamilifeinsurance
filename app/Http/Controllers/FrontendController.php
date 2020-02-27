@@ -238,6 +238,13 @@ class FrontendController extends Controller
       return view('frontend.corporate_information.corporate_chronicle',compact('cronicles'));
     }
 
+    // corporate_chronicle
+    function business_performance()
+    {
+      // $cronicles = CorpCronicle::all();
+      return view('frontend.corporate_information.business_performance');
+    }
+
     // fareast_star_single
     function fareast_star_single($star_id)
     {

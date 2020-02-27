@@ -16,5 +16,6 @@ class Claim extends Model
   protected $fillable =[
     'icon',
     'claim',
+    'claimPdf',
   ];
 }

@@ -66,6 +66,13 @@ NOTICE
 
                             <!-- product_details    -->
 
+
+                            <!--pdf  start -->
+                              <label>Upload Pdf</label>
+                              <input class="form-control" name="noticePdf" type="file">
+                            <!-- pdf end -->
+
+
             			    <textarea name="notice_details" id="summernote" cols="30" rows="10"></textarea>
 
                             <!-- product_photo   -->

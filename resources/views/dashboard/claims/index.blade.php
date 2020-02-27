@@ -30,7 +30,7 @@ CLAIM
         <!--               <a class="breadcrumb-item" href="#">Dashboard</a>-->
                    <span class="breadcrumb-item active">ADD CLAIM</span>
                 </nav>
-             </div>
+        </div>
 
 
 
@@ -77,6 +77,15 @@ CLAIM
                            <div class="col-7 col-sm-8">
                              <input class="form-control" type="text" name="icon" placeholder="ion-spin">
 
+                           </div>
+
+                           <div class="col-7 col-sm-8">
+                             <label>Claim Date</label>
+                             <input class="form-control" type="date" name="claimDate" placeholder="ion-spin">
+                           </div>
+                           <div class="col-7 col-sm-8">
+                             <label>Upaold PDF</label>
+                             <input class="form-control" type="file" name="claimPdf" placeholder="ion-spin">
                            </div>
 
                          </div>

@@ -17,5 +17,6 @@ class Notice extends Model
     'notice_title',
     'notice_details',
     'photo',
+    'noticePdf',
   ];
 }

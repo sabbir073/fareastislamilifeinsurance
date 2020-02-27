@@ -34,10 +34,11 @@
       </section>
 
 
+<section style=" background:url(https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png); background-repeat:no-repeat;background-size:cover;">
 
 
 
-<div class="container">
+<div class="container"style="padding: 35px;">
   <div class="row">
     <div class="col-md-12">
 
@@ -68,7 +69,7 @@
                     <a href="#" class="btn btn-primary btn--rounded mt-4">Read More</a>
                 </div><!-- ends: .col-lg-6 -->
             </div>
-  
+
             <div class="row content_block3_wrapper align-items-center">
                 <div class="col-lg-5 col-md-6 margin-md-60">
                     <img src="https://www.fareastislamilife.com/images/common/Data-Center.jpg" alt="" class="rounded">
@@ -97,7 +98,7 @@
   </div>
 </div>
 
-
+</section>
 
 
 

@@ -17,12 +17,14 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('product_title');
             $table->longText('product_details');
+            $table->longText('product_details_ban');
             $table->string('product_photo');
+            $table->string('product_photo_bang');
             $table->softDeletes();
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *

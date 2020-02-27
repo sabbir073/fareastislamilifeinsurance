@@ -17,6 +17,8 @@ class CreateClaimsTable extends Migration
             $table->bigIncrements('id');
             $table->string('icon');
             $table->longText('claim');
+            $table->string('claimDate');
+            $table->timestamp('claimPdf');
             $table->softDeletes();
             $table->timestamps();
         });

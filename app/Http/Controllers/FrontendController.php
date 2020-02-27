@@ -10,6 +10,7 @@ use App\Claim;
 use App\Gallery;
 use App\Promotion;
 use App\Corporate;
+use App\Ceo;
 use App\CorpCronicle;
 use App\Event;
 use App\Faq;
@@ -84,6 +85,10 @@ class FrontendController extends Controller
       $galleries            = Gallery::latest()->get();
       $promotions           = Promotion::latest()->get();
 
+      // echo $popups[0]->toDate->format('M');
+      // $toDate = Carbon::createFromFormat('Y-m-d', $popups->toDate)->format('M d, Y');
+      // echo Carbon::createFromFormat('m', $popups[0]->toDate)->format('M');;
+      // echo $popups;
       return view('frontend.homepage.index',compact('top_header','popups','galleries','promotions','claims','products','fareast_stars','faqs','events','notices','newses','awards','corporates','sliders','maps','quick_services'));
     }
 
@@ -133,6 +138,13 @@ class FrontendController extends Controller
       $single_message = Chairman::latest()->paginate(1);
       // $single_message = Message::all();
       return view('frontend.messages.index',compact('single_message'));
+    }
+    // ceo_message
+    function ceo_message()
+    {
+      $single_message = Ceo::latest()->paginate(1);
+      // $single_message = Message::all();
+      return view('frontend.messages.ceo',compact('single_message'));
     }
 
     // board_of_directors
@@ -228,6 +240,13 @@ class FrontendController extends Controller
     {
       $cronicles = CorpCronicle::all();
       return view('frontend.corporate_information.corporate_chronicle',compact('cronicles'));
+    }
+
+    // corporate_chronicle
+    function business_performance()
+    {
+      // $cronicles = CorpCronicle::all();
+      return view('frontend.corporate_information.business_performance');
     }
 
     // fareast_star_single

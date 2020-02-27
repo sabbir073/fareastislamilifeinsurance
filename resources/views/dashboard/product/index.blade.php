@@ -55,41 +55,85 @@ ADD PRODUCT
         <div class="br-pagebody">
           <div class="br-section-wrapper">
 
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Product</button>
+
+            <div class="modal fade bd-example-modal-lg"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" style="width: 100% !important;" >
+                <div class="modal-content">
+
+<div class="container">
+  <form action="{{ route('product_create') }}" method="post" enctype="multipart/form-data">
+@csrf
+                  <!--add product name-->
+
+                  <label for="product_title">Product Title</label>
+                  <textarea name="product_title" id="product_title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+
+                  <!-- product_details    -->
+                  <!-- product_photo   -->
+
+                  <label for="product_title">Product English</label>
+                  <div class="row no-gutters">
+
+                     <label class="custom-file">
+                        <input type="file" id="file" name="product_photo" class="custom-file-input">
+                        <span class="custom-file-control"></span>
+                     </label>
+                  </div>
+
+                  <!-- product_photo  end -->
+                  <!-- product_photo   -->
+
+                  <label for="product_title">Product Bangla</label>
+                  <div class="row no-gutters">
+
+                     <label class="custom-file">
+                        <input type="file" id="file" name="product_photo_bang" class="custom-file-input">
+                        <span class="custom-file-control"></span>
+                     </label>
+                  </div>
+
+                  <!-- product_photo  end -->
+
+            <textarea name="product_details" id="summernoteEng" cols="30" rows="10"></textarea>
+            <textarea name="product_details_ban" id="summernoteBan" cols="30" rows="10"></textarea>
+
+                <button type="submit" class="btn btn-primary" >Add Product</button>
+
+
+
+
+          </form>
+</div>
+
+
+
+                </div>
+              </div>
+            </div>
+
+            {{-- Large modal end --}}
+</div>
+
             {{-- inner_content --}}
 
-            <form action="{{ route('product_create') }}" method="post" enctype="multipart/form-data">
-@csrf
-                            <!--add product name-->
 
-                            <label for="product_title">Product Title</label>
-                            <textarea name="product_title" id="product_title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-
-                            <!-- product_details    -->
-                            <!-- product_photo   -->
-
-                            <div class="row no-gutters">
-                               <label class="custom-file">
-                                  <input type="file" id="file" name="product_photo" class="custom-file-input">
-                                  <span class="custom-file-control"></span>
-                               </label>
-                            </div>
-
-                            <!-- product_photo  end -->
-
-            			    <textarea name="product_details" id="summernoteEng" cols="30" rows="10"></textarea>
-            			    <textarea name="product_details_ban" id="summernoteBan" cols="30" rows="10"></textarea>
-
-                          <button type="submit" class="btn btn-primary" >Add Product</button>
-
-
-
-
-            				</form>
 <br>
+<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+  <h4 class="tx-gray-800 mg-b-5 text-uppercase">Introduction PRODUCT</h4>
+</div>
+<br>
+
+
+
                   <form action="{{ route('introduction_create') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!--add product name-->
                             <div class="col-7 col-sm-8">
+                              <label for="product_title">Choose Product</label>
+
                               <select name="product_id" class="form-control">
 
                                      @foreach ($products as $parent_menu)
@@ -112,11 +156,16 @@ ADD PRODUCT
 
                           <button type="submit" class="btn btn-primary" >Save</button>
             			</form>
-<br>
+                  <br>
+                  <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+                    <h4 class="tx-gray-800 mg-b-5 text-uppercase">Benifits PRODUCT</h4>
+                  </div>
+                  <br>
                   <form action="{{ route('profit_create') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!--add product name-->
                             <div class="col-7 col-sm-8">
+                              <label for="product_title">Choose Product</label>
                               <select name="product_id" class="form-control">
 
                                      @foreach ($products as $parent_menu)
@@ -127,14 +176,14 @@ ADD PRODUCT
 
                               </select>
                             </div>
-                            <label for="product_title">Profit Title English</label>
+                            <label for="product_title">Benifits Title English</label>
                             <textarea name="title" id="title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Profit Title Bangla</label>
+                            <label for="product_title">Benifits Title Bangla</label>
                             <textarea name="titleBan" id="titleBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
 <br>
-                            <label for="product_title">Product Discription English</label>
+                            <label for="product_title">Benifits Discription English</label>
                             <textarea name="dis" id="dis" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Product Discription Bangla</label>
+                            <label for="product_title">Benifits Discription Bangla</label>
                             <textarea name="disBan" id="disBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
 
                           <button type="submit" class="btn btn-primary" >Save</button>

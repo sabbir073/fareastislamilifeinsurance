@@ -242,6 +242,10 @@ Route::get('/dashboard/product/force/delete/{product_id}','ProductController@for
 Route::get('/dashboard/chairman','ManagementController@chairman')->name('chairman');
 //chairman_create
 Route::post('/dashboard/chairman/create','ManagementController@chairman_create')->name('chairman_create');
+// ceo
+Route::get('/dashboard/ceo','ManagementController@ceo')->name('ceo');
+//chairman_create
+Route::post('/dashboard/ceo/create','ManagementController@ceo_create')->name('ceo_create');
 //management_index
 Route::get('/dashboard/management','ManagementController@management_index')->name('management_index');
 //management_board_create
@@ -334,6 +338,8 @@ Route::get('/dashboard/event/restore/{event_id}','EventController@event_restore'
 
 // notice_index
 Route::get('/dashboard/notice','NoticeController@notice_index')->name('notice_index');
+
+Route::get('/show/notice/pdf/{id}/{pdf}','NoticeController@shownoticepdf')->name('shownoticepdf');
 // notice_index
 Route::post('/dashboard/notice/create','NoticeController@notice_create')->name('notice_create');
 // all_notices
@@ -490,6 +496,7 @@ Route::any('/index','FrontendController@index')->name('homepage');
 Route::get('/management-committee','FrontendController@management_committee')->name('management_committee');
 // Route::get('/management-committee/{committee_id}','FrontendController@single_committee')->name('single_committee');
 Route::get('/chairman/message','FrontendController@chairman_message')->name('chairman_message');
+Route::get('/ceo/message','FrontendController@ceo_message')->name('ceo_message');
 
 // management_corporate
 Route::get('/corporate-management','FrontendController@management_corporate')->name('management_corporate');
@@ -539,6 +546,9 @@ Route::get('/corporate-information','FrontendController@corporate_information')-
 
 //corporate_information
 Route::get('/corporate-chronicle','FrontendController@corporate_chronicle')->name('corporate_chronicle');
+
+//business_performance
+Route::get('/business-performance','FrontendController@business_performance')->name('business_performance');
 
 //notices
 Route::get('/notices','FrontendController@notices')->name('notices');
@@ -636,6 +646,7 @@ Route::get('/apply-career/{id}','FrontendController@apply_career')->name('apply_
 Route::post('/get/state/name','FrontendController@getstatename')->name('getstatename');
 Route::post('/saveCareerApplication','FrontendController@saveCareerApplication')->name('saveCareerApplication');
 
+Route::get('/show/claim/pdf/{id}/{pdf}','ClaimController@showclaimpdf')->name('showclaimpdf');
 
 // Applied Applications
 Route::get('/manageApplication','FrontendController@manageApplication')->name('manageApplication');

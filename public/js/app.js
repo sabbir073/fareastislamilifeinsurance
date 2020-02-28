@@ -1947,8 +1947,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "formSubmit",
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -1958,8 +1958,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   method: {
-    addSubs: function addSubs() {
-      alert('Hello');
+    formSubmit: function formSubmit() {
+      // axiox.post('./api/subscriber',{
+      //   subscriber: this.subscriber,
+      // });
+      // console.log();
+      alert('sadsad');
     }
   }
 });
@@ -37360,13 +37364,7 @@ var render = function() {
               "form",
               {
                 staticStyle: { padding: "6.5rem" },
-                attrs: { action: "./api/subscriber", method: "post" },
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.addSubs()
-                  }
-                }
+                attrs: { action: "./api/subscriber", method: "post" }
               },
               [
                 _c("div", { staticClass: "row no-gutters" }, [
@@ -37387,7 +37385,7 @@ var render = function() {
                       staticClass: "form-control",
                       attrs: {
                         type: "email",
-                        name: "question",
+                        name: "subscriber",
                         placeholder: "Add Subscription Email"
                       },
                       domProps: { value: _vm.subscriber },
@@ -37403,7 +37401,24 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(0)
+                _c("div", { staticClass: "row no-gutters" }, [
+                  _c("div", { staticClass: "col-md-12" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-info waves-effect waves-light",
+                        attrs: { type: "submit" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.formSubmit()
+                          }
+                        }
+                      },
+                      [_vm._v("Send Data")]
+                    )
+                  ])
+                ])
               ]
             )
           ])
@@ -37412,25 +37427,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row no-gutters" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-info waves-effect waves-light",
-            attrs: { type: "submit" }
-          },
-          [_vm._v("Send Data")]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -49764,8 +49761,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\laravel\projectFareast\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\laravel\projectFareast\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Prince\OneDrive\Desktop\New folder\fareastProject\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Prince\OneDrive\Desktop\New folder\fareastProject\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

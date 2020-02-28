@@ -57,7 +57,16 @@ ADD PRODUCT
 
 
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Product</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">ADD PRODUCT</button>
+
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg1">INTRODUCTION PRODUCT</button>
+
+
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg2">BENIFITS PRODUCT</button>
+
 
             <div class="modal fade bd-example-modal-lg"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg" style="width: 100% !important;" >
@@ -115,84 +124,104 @@ ADD PRODUCT
             </div>
 
             {{-- Large modal end --}}
+
+
+
+            <div class="modal fade bd-example-modal-lg1"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" style="width: 100% !important;" >
+                <div class="modal-content">
+
+<div class="container">
+  <form action="{{ route('introduction_create') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <!--add product name-->
+            <div class="col-7 col-sm-8">
+              <label for="product_title">Choose Product</label>
+
+              <select name="product_id" class="form-control">
+
+                     @foreach ($products as $parent_menu)
+
+                       <option value="{{ $parent_menu->id }}">{!! html_entity_decode( $parent_menu->product_title ) !!}</option>
+
+                     @endforeach
+
+              </select>
+            </div>
+            <label for="product_title">Introduction Title English</label>
+            <textarea name="title" id="title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+            <label for="product_title">Introduction Title Bangla</label>
+            <textarea name="titleBan" id="titleBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+
+            <label for="product_title">Introduction Discription English</label>
+            <textarea name="dis" id="dis" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+            <label for="product_title">Introduction Discription Bangla</label>
+            <textarea name="disBan" id="disBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+
+          <button type="submit" class="btn btn-primary" >Save</button>
+  </form>
 </div>
 
-            {{-- inner_content --}}
 
 
-<br>
-<div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-  <h4 class="tx-gray-800 mg-b-5 text-uppercase">Introduction PRODUCT</h4>
+                </div>
+              </div>
+            </div>
+
+            {{-- ------------------ --}}
+
+
+
+            <div class="modal fade bd-example-modal-lg2"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" style="width: 100% !important;" >
+                <div class="modal-content">
+
+<div class="container">
+
+
+                    <form action="{{ route('profit_create') }}" method="post" enctype="multipart/form-data">
+                              @csrf
+                              <!--add product name-->
+                              <div class="col-7 col-sm-8">
+                                <label for="product_title">Choose Product</label>
+                                <select name="product_id" class="form-control">
+
+                                       @foreach ($products as $parent_menu)
+
+                                         <option value="{{ $parent_menu->id }}">{!! html_entity_decode( $parent_menu->product_title ) !!}</option>
+
+                                       @endforeach
+
+                                </select>
+                              </div>
+                              <label for="product_title">Benifits Title English</label>
+                              <textarea name="title" id="title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+                              <label for="product_title">Benifits Title Bangla</label>
+                              <textarea name="titleBan" id="titleBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+  <br>
+                              <label for="product_title">Benifits Discription English</label>
+                              <textarea name="dis" id="dis" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+                              <label for="product_title">Benifits Discription Bangla</label>
+                              <textarea name="disBan" id="disBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
+
+                            <button type="submit" class="btn btn-primary" >Save</button>
+              			</form>
 </div>
-<br>
 
 
 
-                  <form action="{{ route('introduction_create') }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <!--add product name-->
-                            <div class="col-7 col-sm-8">
-                              <label for="product_title">Choose Product</label>
+                </div>
+              </div>
+            </div>
 
-                              <select name="product_id" class="form-control">
 
-                                     @foreach ($products as $parent_menu)
+            {{-- -------------------- --}}
+</div>
 
-                                       <option value="{{ $parent_menu->id }}">{!! html_entity_decode( $parent_menu->product_title ) !!}</option>
 
-                                     @endforeach
-
-                              </select>
-                            </div>
-                            <label for="product_title">Introduction Title English</label>
-                            <textarea name="title" id="title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Introduction Title Bangla</label>
-                            <textarea name="titleBan" id="titleBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-
-                            <label for="product_title">Introduction Discription English</label>
-                            <textarea name="dis" id="dis" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Introduction Discription Bangla</label>
-                            <textarea name="disBan" id="disBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-
-                          <button type="submit" class="btn btn-primary" >Save</button>
-            			</form>
-                  <br>
-                  <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-                    <h4 class="tx-gray-800 mg-b-5 text-uppercase">Benifits PRODUCT</h4>
-                  </div>
-                  <br>
-                  <form action="{{ route('profit_create') }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <!--add product name-->
-                            <div class="col-7 col-sm-8">
-                              <label for="product_title">Choose Product</label>
-                              <select name="product_id" class="form-control">
-
-                                     @foreach ($products as $parent_menu)
-
-                                       <option value="{{ $parent_menu->id }}">{!! html_entity_decode( $parent_menu->product_title ) !!}</option>
-
-                                     @endforeach
-
-                              </select>
-                            </div>
-                            <label for="product_title">Benifits Title English</label>
-                            <textarea name="title" id="title" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Benifits Title Bangla</label>
-                            <textarea name="titleBan" id="titleBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-<br>
-                            <label for="product_title">Benifits Discription English</label>
-                            <textarea name="dis" id="dis" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-                            <label for="product_title">Benifits Discription Bangla</label>
-                            <textarea name="disBan" id="disBan" class="editable tx-16 bd pd-30 tx-inverse" cols="30" rows="10"></textarea>
-
-                          <button type="submit" class="btn btn-primary" >Save</button>
-            			</form>
-
-            {{-- inner_content END --}}
 
           </div>
-        </div>
+  
 
 
 

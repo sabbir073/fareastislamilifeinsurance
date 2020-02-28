@@ -38,10 +38,10 @@ class FaqController extends Controller
 
 
       Faq::insert([
-        'question'=>$request->question,
-        'answer'=>$request->answer,
-        'video'=>$request->video,
-        'created_at'=>Carbon::now(),
+        'question'      =>$request->question,
+        'answer'        =>$request->answer,
+        'video'         =>$request->video,
+        'created_at'    =>Carbon::now(),
       ]);
 
       Alert::toast('FAQ ADDED','success');
@@ -71,10 +71,10 @@ class FaqController extends Controller
         function faq_update(Request $request)
         {
           Faq::findOrFail($request->faq_id)->update([
-            'question'=>$request->question,
-            'answer'=>$request->answer,
-            'video'=>$request->video,
-            'updated_at'=>Carbon::now(),
+            'question'      =>$request->question,
+            'answer'        =>$request->answer,
+            'video'         =>$request->video,
+            'updated_at'    =>Carbon::now(),
           ]);
 
           Alert::toast('FAQ DELETED','success');

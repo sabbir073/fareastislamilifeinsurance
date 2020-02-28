@@ -5,22 +5,21 @@
       <div class="modal-content">
 
 
-      <form action="./api/subscriber" method="post" style="padding: 6.5rem;" @submit.prevent="addSubs()">
+
+      <form action="./api/subscriber" method="post" style="padding: 6.5rem;">
 
         <!-- Add New Menu-->
         <div class="row no-gutters">
-
           <div class="col-12">
           <label for="">Add Subscription:</label>
-            <input class="form-control" v-model="subscriber" type="email" name="question" placeholder="Add Subscription Email">
+            <input class="form-control" v-model="subscriber" type="email" name="subscriber" placeholder="Add Subscription Email">
           </div>
-
         </div>
 
          <div class="row no-gutters">
 
          <div class="col-md-12">
-              <button type="submit" class="btn btn-info waves-effect waves-light">Send Data</button>
+              <button type="submit" class="btn btn-info waves-effect waves-light" @click.prevent="formSubmit()">Send Data</button>
          </div>
 
 
@@ -40,6 +39,8 @@
 
 <script>
     export default {
+        name: "formSubmit",
+
         mounted() {
             console.log('Component mounted.')
         },
@@ -49,9 +50,14 @@
           }
         },
         method:{
-          addSubs(){
-            alert('Hello');
+          formSubmit(){
+            // axiox.post('./api/subscriber',{
+            //   subscriber: this.subscriber,
+            // });
+            // console.log();
+            alert('sadsad');
           },
+
         }
     }
 </script>

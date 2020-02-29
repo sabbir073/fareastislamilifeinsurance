@@ -1021,12 +1021,14 @@ img.zoom {
 .modal-window > div {
   width: 400px;
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 2em;
-  background: #ffffff;
+  background: #27ae60;
+  border-radius: 10px;
+  height: 80%;
 }
 .modal-window header {
   font-weight: bold;
@@ -1037,7 +1039,7 @@ img.zoom {
 }
 
 .modal-close {
-  color: #aaa;
+  color: #fff !important;
   line-height: 50px;
   font-size: 80%;
   position: absolute;
@@ -1048,9 +1050,13 @@ img.zoom {
   text-decoration: none;
 }
 .modal-close:hover {
-  color: black;
+  color: #fafafa !important;
 }
 
+
+#bimaRes h3, h1{
+  color:#fff;
+}
 @endsection
 
 @section('content')
@@ -1324,96 +1330,96 @@ img.zoom {
                     <a href="#" title="Close" class="modal-close">Close</a>
                     <div class="col-md-8 offset-md-2">
 
-                      <div class="premium_cal">
-    
+                      <div class="premium_cal" style="margin-top: 0 !important;">
+
                       <!-- Default form login -->
                       <form action="#" method="get" id="form">
-    
+
                         <div class="form-group">
                           <label for="dob">Date Of Birth</label>
                           <input type="date" class="form-control" id="dob" aria-describedby="emailHelp">
                         </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
                         <div class="form-group">
                           <input type="text" disabled class="form-control" id="age" aria-describedby="emailHelp" value="" placeholder="Enter Your Age">
                         </div>
-    
+
                         <div class="form-group">
                           <select class="form-control" name="" id="plan">
                             <option value="0">Select One *</option>
                           </select>
                         </div>
                         <div id="termDivSection">
-    
+
                         </div>
                         <div class="form-group">
                           <select class="form-control" name="" id="term">
                             <option value="0">Terms And Policy *</option>
                           </select>
                         </div>
-    
+
                         <div class="form-group">
                           <select class="form-control" name="" id="mode">
                             <option value="0">Mode Of Payment *</option>
                           </select>
                         </div>
-    
-    
+
+
                                 <div class="form-group">
                                   <input id="sum" placeholder="Enter Sum Assured" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
-    
-    
+
+
                                 <div class="row">
                                   <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-info">Calculate Premium</button>
                                   </div>
                                 </div>
-    
-    
+
+
                                 <!-- Button trigger modal -->
-    
-    
+
+
                       </form>
                       <!-- Default form login -->
-    
-    
-    
-    
-    
+
+
+
+
+
                       <div id="bimaRes" class="text-center">
-    
+
                       </div>
-    
-    
+
+
                       <!-- Button trigger modal -->
                       {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Launch demo modal
                       </button> --}}
-    
+
                       <!-- Modal -->
-    
-    
-    
-    
-    
+
+
+
+
+
                     </div>
-    
+
                   </div>
                   </div>
                     </div>
-                
-               
+
+
 
         </div>
         {{-- @endforeach --}}
@@ -1654,7 +1660,7 @@ img.zoom {
                     <h3>FAREAST STAR</h3>
                 </div>
 
-            <div class="star-slider owl-carousel" style="margin-bottom: 55px;">
+            <div class="star-slider owl-carousel" style="margin-bottom: 55px; z-index: 0;">
               @foreach ($fareast_stars as $fareast_star)
 
                 <a href="{{ url('/fareast/star') }}/{{ $fareast_star->id }}">
@@ -2186,7 +2192,7 @@ img.zoom {
                     <h3>AWARDS</h3>
                 </div>
 
-            <div class="star-slider owl-carousel" style="margin-bottom: 55px;">
+            <div class="star-slider owl-carousel" style="margin-bottom: 55px; z-index: 0;">
               @foreach ($awards as $award)
 
                 <a href="#">
@@ -2261,7 +2267,7 @@ img.zoom {
 @section('js')
 
 <script src="{{ asset('frontend/popup/vendor/tilt/tilt.jquery.min.js') }}"></script>
-
+<script src="{{asset('js/myFareast.js')}}" charset="utf-8"></script>
 
   <script type="text/javascript">
   $(".tiptext").mouseover(function() {

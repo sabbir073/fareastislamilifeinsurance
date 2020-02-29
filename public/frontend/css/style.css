@@ -155,7 +155,8 @@ header .navbar-nav li a {
 #products .product-slider {
     width: 100%;
     height: 400px;
-    position: relative
+    position: relative;
+    z-index: 0;
 }
 
 #products .product-slider .product {
@@ -394,6 +395,10 @@ header .navbar-nav li a {
 #event .event-slide .owl-dots {
     margin: auto;
     width: 26%
+}
+
+#event .event-slide{
+  z-index: 0 !important;
 }
 
 #event .event-slide .owl-dots .owl-dot {
@@ -636,6 +641,8 @@ header .navbar-nav li a {
   display: none;
 }
 
+
+
 .subscribe-seven{
   background-image: url(https://res.cloudinary.com/code-error/image/upload/v1580302685/fareast/images/map2_zacjmp.png) !important;
 }
@@ -647,4 +654,3 @@ header .navbar-nav li a {
 .showcase--title1 h3{
   font-weight: 700;
 }
-

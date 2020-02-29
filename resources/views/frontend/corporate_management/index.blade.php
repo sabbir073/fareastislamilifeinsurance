@@ -1,191 +1,226 @@
 @extends('frontend.homepage.app')
 
 @section('css')
-  .head-text {
-        width: 50%;
-        height: 200px;
-        float: left;
-    }
 
-    .head-text h1 {
-        font-weight: normal;
-        color: #00a651;
-        padding: 20px;
-        font-size: 40px;
-        margin-top: 100px;
-        margin-left: 100px;
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-    }
-
-    .members {
-        overflow: hidden;
-        padding-top: 5%;
-        background: url("https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png") 0% 0% / cover no-repeat;
-    }
-
-    .member {
-        width: 20%;
-        float: left;
-        padding: 2%;
-        text-align: center;
-    }
-
-    .member h4,
-    p {
-        margin: 5px;
-    }
-
-    .img_member{
-        width: 300px !important;
-        height: 350px !important;
-        margin: auto;
-    }
-
-    .mem-item {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .icon-box-15{
-      padding:0px;
-    }
-
-    .icon-box-15 img{
-      margin-bottom: 15px;
-      width: 75%;
-    }
-
-    .icon-box-15 h6{
-      margin-bottom: 0;
-    }
-
-
-
-    /*responsive*/
-    @media screen and (max-width: 768px) {
-        .head-text {
-            width: 100%;
+  body{
+            background: url("https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png") 0% 0% / cover no-repeat;
         }
-        .head-text h1{
-            margin-top: 50px;
+        #cr-banner{
+            border: 1px solid #aaa;
+            padding-bottom: 20px;
         }
+        head-text{
+            position: relative;
 
-        .member {
-            width: 45%;
         }
-
-        .mem-item:last-child .member{
-            float: none;
-            display: inline-block;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        .member {
-            width: 45%;
-        }
-
-        .member img {
-            width: 100%;
-            height: 300px;
-        }
-    }
-
-    @media screen and (max-width: 420px) {
-        .head-text {
-            height: auto;
-        }
-
-        .member {
-            width: 50%;
-        }
-
-        .member img {
-            width: 322px !important;
-            height: 322px !important;
-        }
-        .head-text h1{
-            margin-left: 0px;
-            font-size: 1.5em;
+        .detail{
             text-align: center;
         }
-        .members {
-            overflow: hidden;
-            padding-top: 20%;
+        .detail h2{
+            font-weight: 600;
+            margin-bottom: 10px;
         }
-    }
+        .detail p{
+            font-size: 18px;
+        }
+        .mem-item{
+            width: 23%;
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+        }
+        .mem-img img{
+            width: 100%;
+            box-shadow:  0px 0px 10px grey;
+        }
+        .mem-detail{
+            text-align: center;
+        }
+        .mem-detail h2{
+            font-size: 25px;
+        }
+        .mem-detail p{
+            font-size: 18px;
+        }
 
+        #topbar{
+          background: #2d3436;
+          z-index: 1;
+          padding: 1px 0;
+          position:relative;
+        }
+
+        .detail p:nth-child(1){
+          font-weight: 600 !important;
+          font-size: 30px;
+          color: #212529;
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+        }
+
+        .detail p:nth-child(2){
+          font-weight: 600 !important;
+          font-size: 18px;
+          color: #212529;
+        }
+
+        .icon-box-15{
+          padding:0px;
+        }
+
+        .icon-box-15 img{
+          margin-bottom: 15px;
+        }
+
+        .icon-box-15 h6{
+          margin-bottom: 0;
+        }
+        main{
+          margin-top:85px;
+        }
 
 @endsection
 
 @section('content')
 
 
+<section class="m-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+        <h1 class="text-uppercase">Corporate management</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-      <div class="members">
+{{-- <div id="board-mem" style="margin: 50px 0 0 0;">
+  <div class="container">
 
-          <div class="mem-item">
-              <div class="head-text">
-                  <h1>Corporate Management</h1>
+      <div class="row">
+        @foreach ($management_commitees as $management_commitee)
+
+          <div class="col-md-3 aunModalFrom">
+            <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+              <div class="icon-box icon-box-15 text-center far_board aunModalFromDiv">
+                  <img src="{{ asset('/uploads/management') }}/{{ $management_commitee->photo }}" class="img-fluid" style="width: 100%" alt="">
+                  <h6>{!! html_entity_decode($management_commitee->name) !!}</h6>
+                  <p class="text-dark">{!! html_entity_decode(Str::limit($management_commitee->speaks,10)) !!}</p>
               </div>
+            </a>
+
+          </div>
 
 
-            @foreach ($corporate_managements as $corporate_management)
-
-              <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-
-                <div class="member">
-                    <div class="icon-box icon-box-15 text-center far_man_com">
-                        <img src="{{ asset('/uploads/management') }}/{{ $corporate_management->photo }}" class="img-fluid" style="width: 100%" alt="">
-                        <h6>{!! html_entity_decode($corporate_management->name) !!}</h6>
-                        <p class="text-dark">Totam rem aperiam.</p>
-                    </div>
-                </div>
-
-              </a>
 
 
-            @endforeach
+        @endforeach
 
 
-            <!-- Extra large modal START-->
+        <!-- Extra large modal START-->
 
 
-            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-10 offset-md-1">
-                        <div class="far_modal p-5">
-                          <div class="far_img text-center">
-                            <img src="https://fareast.xubisoft.com/uploads/management/3.jpg" class="img-fluid" alt="">
-                          </div>
-                          <div class="far_para pt-2">
-                            <p class="text-justify text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                              <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                  <div class="modal-content">
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="col-md-10 offset-md-1">
+                                          <div class="far_modal p-5">
+                                            <div class="far_img text-center">
+                                              <img id="aunModalToImg" src="" class="img-fluid" alt="">
+                                            </div>
+                                            <div id="aunModalTo" class="far_para pt-2">
+                                              <h2 id="aunModalToh" class="text-center text-dark"></h2>
+                                              <p id="aunModalTod" class="text-justify text-dark"></p>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Extra large modal END-->
+
+
+
+
+
+
+      </div>
+
+  </div>
+</div> --}}
+
+
+
+      <div id="board-mem">
+          <div class="container">
+              <div class="row">
+
+                @foreach ($corporate_managements as $board_of_directors)
+
+                  <div class="col-md-3 aunModalFrom">
+                      <div class="aunModalFromDiv icon-box icon-box-15 text-center far_board">
+                        <a class="" href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
+                          <img src="{{ asset('/uploads/management') }}/{{ $board_of_directors->photo }}" class="img-fluid imgaunfrom" style="width: 100%" alt="">
+                        </a>
+                          <h6>{!! html_entity_decode($board_of_directors->name) !!}</h6>
+                          <div style="display: none;">{!! html_entity_decode($board_of_directors->speaks) !!}</div>
+                          <p class="text-dark">{!! html_entity_decode(Str::limit($board_of_directors->speaks,10)) !!}</p>
+                      </div>
+
+                  </div>
+
+                @endforeach
+
+                <!-- Extra large modal START-->
+
+
+                <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content" style="border: 5px solid #000;">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-10 offset-md-1">
+                            <div class="far_modal p-5">
+                              <div class="far_img text-right">
+                                <img id="aunModalToImg" src="" class="img-fluid" alt="">
+                              </div>
+                              <div id="aunModalTo" class="far_para pt-2">
+                                <h2 id="aunModalToh" class="text-right text-dark"></h2>
+                                <p id="aunModalTod" class="text-justify text-dark"></p>
+                              </div>
+                            </div>
+
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Extra large modal END-->
+
+
+
+
+
+
+
+
               </div>
-            </div>
-
-            <!-- Extra large modal END-->
-
-
-
-
-
 
           </div>
-
       </div>
-
 
 
 @endsection
@@ -193,17 +228,49 @@
 
 @section('js')
 
-{{-- <script>
+  <script>
 
-$('.committee').click(function(e){
-  // alert(e.target.dataset.id);
-  console.log();
-  if(e.target.dataset.id != undefined){
-    var makeUrl=window.location.origin+"/management-committee/"+e.target.dataset.id;
-    window.location.href=makeUrl;
+    $('.aunModalFrom').click((e)=>{
+      let target = e.target;
+      if (target.classList.contains('imgaunfrom')) {
+          let imageSrc = e.target.src;
+          let ph = target.parentElement.parentElement.childNodes[3].innerHTML;
+          let pd = target.parentElement.parentElement.childNodes[5].innerHTML;
+
+          document.getElementById('aunModalToImg').src = imageSrc;
+          document.getElementById('aunModalToh').innerHTML = ph;
+          document.getElementById('aunModalTod').innerHTML = pd;
+      }
+
+    });
+
+  </script>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("myImg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
   }
-});
 
-</script> --}}
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  </script>
+
+  <script type="text/javascript">
+    $(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
+  </script>
 
 @endsection

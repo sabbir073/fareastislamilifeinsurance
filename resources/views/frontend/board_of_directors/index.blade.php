@@ -152,7 +152,7 @@
                         </a>
                           <h6>{!! html_entity_decode($board_of_directors->name) !!}</h6>
                           <div style="display: none;">{!! html_entity_decode($board_of_directors->speaks) !!}</div>
-                          <p class="text-dark">{!! html_entity_decode(Str::limit($board_of_directors->speaks,10)) !!}</p>
+                          {{-- <p class="text-dark">{!! html_entity_decode(Str::limit($board_of_directors->speaks,10)) !!}</p> --}}
                       </div>
 
                   </div>

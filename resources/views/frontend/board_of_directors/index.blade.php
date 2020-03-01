@@ -170,7 +170,7 @@
                           <div class="col-md-10 offset-md-1">
                             <div class="far_modal p-5">
                               <div class="far_img text-right">
-                                <img id="aunModalToImg" src="" class="img-fluid" alt="">
+                                <img id="aunModalToImg" src="" class="img-fluid" alt="" style="border-radius: 50%;">
                               </div>
                               <div id="aunModalTo" class="far_para pt-2">
                                 <h2 id="aunModalToh" class="text-right text-dark"></h2>

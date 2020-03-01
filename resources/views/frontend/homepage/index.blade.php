@@ -2,6 +2,8 @@
 
 @section('css')
 
+  
+
 {{----------------- --}}
 
 
@@ -960,10 +962,10 @@ img.zoom {
 }
 
 .accordion-single{
-  border-bottom: 2px solid !important;
-  padding: 15px;
+  {{-- border-bottom: 2px solid !important; --}}
+  {{-- padding: 15px;
   padding-top: 15px !important;
-  padding-bottom: 5px !important;
+  padding-bottom: 5px !important; --}}
   background: #E6E6FF !important;
 }
 
@@ -972,7 +974,7 @@ img.zoom {
 }
 
 .accordion-heading{
-  background: #db811a !important;
+  background: #28A745 !important;
 }
 
 .accordion-heading a{
@@ -1737,9 +1739,12 @@ img.zoom {
 @foreach ($faqs as $faq)
         <div class="accordion-single">
             <div class="accordion-heading" id="heading{{ $faq->id }}">
+
+
                 <h6 class="mb-0">
                     <a href="#" id="lin" data-videoUrl="{{$faq->video}}" data-id="{{$faq->id}}" class="collapsed vd" data-toggle="collapse" data-target="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapse{{ $faq->id }}">
-                        {!! html_entity_decode($faq->question) !!}
+                      <i class="fas fa-arrow-circle-right"></i>
+                         {!! html_entity_decode($faq->question) !!}
                     </a>
                 </h6>
             </div>

@@ -1146,7 +1146,7 @@ padding-top: 50px;
             <div class="row">
               <div class="col-md-12">
                 <div class="far_moto text-center">
-                  <img src="{{asset('frontend/img/Final.png')}}" alt="" style="height:100px; width:50%">
+                  <img src="{{asset('frontend/img/Final.png')}}" alt="" style="height:100px; width:40%">
                 </div>
               </div>
 

@@ -1989,7 +1989,7 @@ img.zoom {
 
                   <a href="{{ url('show/notice/pdf') }}/{{ $notice->id }}/{{ $notice->noticePdf }}" style="text-decoration: none; text-align: left;" class="text-dark">
 
-                    <div class="post-item hvr-shrink" style="border: 1px solid #e4e8ed ;padding: 10px;">
+                    <div class="post-item hvr-shrink" style="border: 1px solid #e4e8ed ;padding: 10px; width: 100%;">
 
                         <div class="date">
                             <h6>{{ $notice->created_at->format('d') }}</h6>

@@ -68,12 +68,12 @@
 
         <div class="row">
           <div class="col-md-12" style="text-align: end;">
-            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="makePdf();">PRINT</a>
+            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="printDiv2();">PRINT</a>
           </div>
         </div>
 
 
-          <div class="card-body">
+          <div class="card-body" id="DivIdToPrint2">
               {{-- <h2 style="color: #C33030">Assurance Plans (With Profits)</h2>
               <h5 style="color: #00FF00">Introduction:</h5>
               <p class="post-meta" style="color: #000">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
@@ -132,12 +132,12 @@
 
         <div class="row">
           <div class="col-md-12" style="text-align: end;">
-            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="makePdf();">PRINT</a>
+            <a href="#" style="margin: 15px;" class="btn btn-danger" onclick="printDiv();">PRINT</a>
           </div>
         </div>
 
 
-          <div class="card-body" id="printMe">
+          <div class="card-body" id="DivIdToPrint">
             {!! html_entity_decode($productInfo->product_details_ban) !!}
 
 
@@ -196,6 +196,39 @@
 
 @section('js')
 
+<script type="text/javascript">
+function printDiv()
+{
 
+  var divToPrint=document.getElementById('DivIdToPrint');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+function printDiv2()
+{
+
+  var divToPrint=document.getElementById('DivIdToPrint2');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+</script>
 
 @endsection

@@ -1909,12 +1909,12 @@ img.zoom {
         <form method="get" id="form" action="#">
           <input type="date" id="dob" placeholder="Your DOB" style="border:1px solid #000;">
           <input type="number" id="age" placeholder="Your Age" style="border:1px solid #000;">
+
           <select class="form-control" name="" id="plan">
             <option value="0">Select One *</option>
           </select>
-          <div id="termDivSection">
 
-          </div>
+          <div id="termDivSection"></div>
 
           <select class="form-control" name="" id="term">
             <option value="0">Terms And Policy *</option>
@@ -1928,7 +1928,7 @@ img.zoom {
           <input type="number" id="sum" placeholder="ENTER SUM" style="border:1px solid #000;">
 
 
-          <button type="submit" name="button">CALCULATE</button>
+          <button type="submit">CALCULATE</button>
 
 
 

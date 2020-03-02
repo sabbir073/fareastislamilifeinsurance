@@ -87,6 +87,28 @@
           margin-bottom: 0;
         }
 
+
+        .popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
 @endsection
 
 @section('content')
@@ -183,6 +205,9 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="popupCloseButton">&times;</div>
+
                 </div>
 
                 <!-- Extra large modal END-->
@@ -262,6 +287,15 @@ span.onclick = function() {
 
 <script type="text/javascript">
   $(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".popupCloseButton ").on("click",function(){
+  $(".modal").hide("display","none");
+  });
+});
 </script>
 
 @endsection

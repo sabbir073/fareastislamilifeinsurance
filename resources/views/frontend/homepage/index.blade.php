@@ -2292,6 +2292,8 @@ img.zoom {
 
           </div> --}}
 
+          <div class="col-md-4">
+
           <a href="{{ $promotion->link }}">
 
             <div class="flip">
@@ -2304,6 +2306,8 @@ img.zoom {
             </div>
 
           </a>
+
+          </div>
 
 
         @endforeach

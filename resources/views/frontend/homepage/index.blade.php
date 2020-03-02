@@ -1312,6 +1312,248 @@ img.zoom {
 }
 
 
+{{-- --------------------------- --}}
+
+
+/* POP-UP
+========================================== */
+.pop-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+  -moz-transform: translate(-50%, -50%) scale(0.9);
+  -ms-transform: translate(-50%, -50%) scale(0.9);
+  -o-transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
+  overflow-y: auto;
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 10;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .pop-up {
+    width: calc(100% - 40px);
+    height: auto;
+    max-width: 900px;
+  }
+}
+.pop-up .content {
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+@media (min-width: 768px) {
+  .pop-up .content {
+    min-height: inherit;
+  }
+}
+.pop-up .content .container {
+  padding: 100px 20px 140px;
+}
+@media (min-width: 568px) {
+  .pop-up .content .container {
+    padding: 50px 20px 80px;
+  }
+}
+@media (min-width: 768px) {
+  .pop-up .content .container {
+    padding: 70px 0px 90px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+.pop-up .content .close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  color: #3e4146;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.pop-up .content .close:hover {
+  cursor: pointer;
+  color: #f66867;
+}
+.pop-up .content .dots .dot {
+  position: absolute;
+  border-radius: 100%;
+  z-index: 11;
+}
+.pop-up .content .dots .dot:nth-of-type(1) {
+  top: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  background-color: #689bf6;
+  -webkit-animation: float 6s ease-in-out infinite;
+  -moz-animation: float 6s ease-in-out infinite;
+  -o-animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .pop-up .content .dots .dot:nth-of-type(1) {
+    top: -190px;
+    right: -190px;
+    width: 380px;
+    height: 380px;
+  }
+}
+.pop-up .content .dots .dot:nth-of-type(2) {
+  bottom: -120px;
+  left: -120px;
+  width: 240px;
+  height: 240px;
+  background-color: #f66867;
+  -webkit-animation: float 8s ease-in-out infinite;
+  -moz-animation: float 8s ease-in-out infinite;
+  -o-animation: float 8s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
+}
+.pop-up .content .dots .dot:nth-of-type(3) {
+  bottom: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #ffd84c;
+  -webkit-animation: float 4s ease-in-out infinite;
+  -moz-animation: float 4s ease-in-out infinite;
+  -o-animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+}
+.pop-up .content .title h1 {
+  text-align: center;
+  color: #f66867;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.8rem;
+  letter-spacing: 0.05rem;
+}
+.pop-up .content img {
+  width: 100%;
+  max-width: 220px;
+  display: inline-block;
+  margin: 30px 0 40px 0;
+  opacity: 0;
+  -webkit-transform: translateX(60px);
+  -moz-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -o-transform: translateX(60px);
+  transform: translateX(60px);
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-backface-visibility: hidden;
+}
+@media (min-width: 768px) {
+  .pop-up .content img {
+    max-width: 300px;
+  }
+}
+.pop-up .content .subscribe h1 {
+  font-size: 1.5rem;
+  color: #3e4146;
+  line-height: 130%;
+  letter-spacing: 0.07rem;
+  margin-bottom: 30px;
+}
+.pop-up .content .subscribe h1 span {
+  color: #f66867;
+}
+.pop-up .content .subscribe form {
+  overflow: hidden;
+}
+.pop-up .content .subscribe form input {
+  width: 100%;
+  float: left;
+  padding: 15px 20px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  outline: 0;
+}
+.pop-up .content .subscribe form input[type=email] {
+  margin-bottom: 15px;
+  border: 1px solid #bec1c5;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+@media (min-width: 768px) {
+  .pop-up .content .subscribe form input[type=email] {
+    margin-bottom: 0px;
+    width: 75%;
+    border-right-width: 0px;
+  }
+}
+.pop-up .content .subscribe form input[type=email]:focus {
+  border-color: #3e4146;
+}
+.pop-up .content .subscribe form input[type=submit] {
+  background-color: #8e6ac1;
+  color: #ffffff;
+  border: 1px solid #8e6ac1;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+@media (min-width: 768px) {
+  .pop-up .content .subscribe form input[type=submit] {
+    width: 25%;
+  }
+}
+.pop-up .content .subscribe form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #7349af;
+  border-color: #7349af;
+}
+.pop-up.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -moz-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  -o-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+.pop-up.open img {
+  opacity: 1;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+
+
 @endsection
 
 @section('content')
@@ -1568,7 +1810,7 @@ img.zoom {
 
               {{--  aunshon  --}}
               <div class="card card-twelve hvr-push" style="border: 0;border-radius: 0 0 0 0;box-shadow: 0 5px 30px rgba(41,41,59,.6);">
-                <a href="#open-modal">
+                <a id="premium_cal_pop">
                   <div class="card-body" style="padding: 0;">
                       <h6 class="text-uppercase text-white" style="background: #0083bf;margin: 0;font-weight: bold;padding: 7px;">Premium Calculator</h6>
                       <figure style="background:#0091d4; padding: 49px;">
@@ -1579,100 +1821,6 @@ img.zoom {
                 </a>
                 </div>
 
-
-                <div id="open-modal" class="modal-window">
-                  <div>
-                    <a href="#" title="Close" class="modal-close">Close</a>
-                    <div class="col-md-8 offset-md-2">
-
-                      <div class="premium_cal" style="margin-top: 0 !important;">
-
-                      <!-- Default form login -->
-                      <form action="#" method="get" id="form">
-
-                        <div class="form-group">
-                          <label for="dob">Date Of Birth</label>
-                          <input type="date" class="form-control" id="dob" aria-describedby="emailHelp">
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="form-group">
-                          <input type="text" disabled class="form-control" id="age" aria-describedby="emailHelp" value="" placeholder="Enter Your Age">
-                        </div>
-
-                        <div class="form-group">
-                          <select class="form-control" name="" id="plan">
-                            <option value="0">Select One *</option>
-                          </select>
-                        </div>
-                        <div id="termDivSection">
-
-                        </div>
-                        <div class="form-group">
-                          <select class="form-control" name="" id="term">
-                            <option value="0">Terms And Policy *</option>
-                          </select>
-                        </div>
-
-                        <div class="form-group">
-                          <select class="form-control" name="" id="mode">
-                            <option value="0">Mode Of Payment *</option>
-                          </select>
-                        </div>
-
-
-                                <div class="form-group">
-                                  <input id="sum" placeholder="Enter Sum Assured" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-
-
-                                <div class="row">
-                                  <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-info">Calculate Premium</button>
-                                  </div>
-                                </div>
-
-
-                                <!-- Button trigger modal -->
-
-
-                      </form>
-                      <!-- Default form login -->
-
-
-
-
-
-                      <div id="bimaRes" class="text-center">
-
-                      </div>
-
-
-                      <!-- Button trigger modal -->
-                      {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                      </button> --}}
-
-                      <!-- Modal -->
-
-
-
-
-
-                    </div>
-
-                  </div>
-                  </div>
-                    </div>
 
 
 
@@ -1736,6 +1884,60 @@ img.zoom {
         </div>
         {{-- @endforeach --}}
 {{-- ---------------------------------------------------------------------- --}}
+
+
+
+{{-- ------------------------------ --}}
+<div class="pop-up">
+  <div class="content">
+    <div class="container">
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <span class="close">close</span>
+
+      <div class="title">
+        <h1>Premium Calculator</h1>
+      </div>
+
+      {{-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/cXsiNryL.png" alt="Car"> --}}
+
+      <div class="subscribe">
+        <form method="get" id="form" action="#">
+          <input type="date" id="dob" placeholder="Your DOB" style="border:1px solid #000;">
+          <input type="number" id="age" placeholder="Your Age" style="border:1px solid #000;">
+          <select class="form-control" name="" id="plan">
+            <option value="0">Select One *</option>
+          </select>
+          <div id="termDivSection">
+
+          </div>
+
+          <select class="form-control" name="" id="term">
+            <option value="0">Terms And Policy *</option>
+          </select>
+
+
+          <select class="form-control" name="" id="mode">
+            <option value="0">Mode Of Payment *</option>
+          </select>
+
+          <input type="number" id="sum" placeholder="ENTER SUM" style="border:1px solid #000;">
+
+
+          <button type="submit" name="button">CALCULATE</button>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- ------------------------------ --}}
 
 
 
@@ -2951,6 +3153,17 @@ var x = setInterval(function() {
     document.getElementById("demoaun").innerHTML = "EXPIRED";
   }
 }, 1000);
+</script>
+
+
+<script type="text/javascript">
+$('#premium_cal_pop').click(function(){
+  $('.pop-up').addClass('open');
+});
+
+$('.pop-up .close').click(function(){
+  $('.pop-up').removeClass('open');
+});
 </script>
 
 

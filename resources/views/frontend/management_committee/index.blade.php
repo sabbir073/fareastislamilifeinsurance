@@ -173,7 +173,7 @@
                         <a class="" href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
                           <img src="{{ asset('/uploads/management') }}/{{ $board_of_directors->photo }}" class="img-fluid imgaunfrom" style="width: 100%" alt="">
                         </a>
-                          <h6>{!! html_entity_decode($board_of_directors->name) !!}</h6>
+                          <h6>{!! html_entity_decode(Str::limit($board_of_directors->name,25)) !!}</h6>
                           <div style="display: none;">{!! html_entity_decode($board_of_directors->speaks) !!}</div>
                           {{-- <p class="text-dark">{!! html_entity_decode(Str::limit($board_of_directors->speaks,10)) !!}</p> --}}
                       </div>

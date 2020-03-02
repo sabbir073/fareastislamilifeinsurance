@@ -1286,7 +1286,7 @@ img.zoom {
   display: inline-block;
   margin-right: 2px;
   margin-bottom: 1em;
-  width: 400px;
+  width: 350px;
 }
 .flip > .front,
 .flip > .back {

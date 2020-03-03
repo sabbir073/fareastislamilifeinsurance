@@ -837,7 +837,7 @@ padding-top: 50px;
 }
 .sub-menu .menu-item {
   padding: 0.75rem 0;
-  background: #F67280;
+  background: #28A745;
   opacity: 0;
   transform-origin: bottom;
   animation: enter 0.2s ease forwards;

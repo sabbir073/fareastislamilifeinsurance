@@ -992,6 +992,7 @@ a {
   text-transform: uppercase;
   box-shadow: inset 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
   width: 100%;
+  padding: 10px 0;
 }
 .menu a {
   color: #fff;

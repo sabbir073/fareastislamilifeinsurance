@@ -805,7 +805,7 @@ padding-top: 50px;
 }
 .menu > ol > .menu-item {
   flex: 1;
-  padding: 0.75rem 0;
+  padding: 20px;
 }
 .menu > ol > .menu-item:after {
   content: "";
@@ -1217,25 +1217,24 @@ a {
 
                                 <nav class="menu">
   <ol>
-    <li class="menu-item"><a href="#0">Home</a></li>
-    <li class="menu-item"><a href="#0">About</a></li>
+    <li class="menu-item"><a href="{{ route('homepage') }}">Home</a></li>
+
+@foreach ($all_menu as $menu)
     <li class="menu-item">
-      <a href="#0">Widgets</a>
+      <a href="{{ $menu->link }}">{{ $menu->perent_menu_name }}</a>
+      @if(App\SubMenu::where('parent_menu_id',$menu->id)->exists())
       <ol class="sub-menu">
-        <li class="menu-item"><a href="#0">Big Widgets</a></li>
-        <li class="menu-item"><a href="#0">Bigger Widgets</a></li>
-        <li class="menu-item"><a href="#0">Huge Widgets</a></li>
+          @foreach ($all_sub_menu as $sub_menu)
+            @if($sub_menu->parent_menu_id == $menu->id)
+        <li class="menu-item"><a href="{{ $sub_menu->sub_menu_link }}">{{ $sub_menu->sub_menu_name }}</a></li>
+  @endif
+          @endforeach
       </ol>
+        @endif
     </li>
-    <li class="menu-item">
-      <a href="#0">Kabobs</a>
-      <ol class="sub-menu">
-        <li class="menu-item"><a href="#0">Shishkabobs</a></li>
-        <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
-        <li class="menu-item"><a href="#0">Summer kabobs</a></li>
-      </ol>
-    </li>
+@endforeach
     <li class="menu-item"><a href="#0">Contact</a></li>
+
   </ol>
 </nav>
 

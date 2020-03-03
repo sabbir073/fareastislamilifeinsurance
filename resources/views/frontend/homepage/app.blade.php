@@ -1732,7 +1732,7 @@ a {
   }
   .menu > ol > li > a {
     padding: 4px 0;
-    font-size: 12px;
+    font-size: 11px;
     position: relative;
     width: 100%;
     text-align: center;
@@ -2124,7 +2124,7 @@ a {
 </nav> --}}
 
 <nav class="menu">
-  <ol>
+  <ol style="margin: 2px 0 0 75px;">
     <li class="menu-item"><a href="{{ route('homepage') }}">Home</a></li>
 
 @foreach ($all_menu as $menu)

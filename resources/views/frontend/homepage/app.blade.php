@@ -1155,7 +1155,7 @@ a {
                         </a>
                         </div>
 
-                    <img class="img-fluid hidden" src="https://res.cloudinary.com/onexa/image/upload/v1582544620/Final_1_oulatn.png" width="180px" height="150px" style="display:inline; margin: 12px 0px 0px 107px;">
+                    {{-- <img class="img-fluid hidden" src="https://res.cloudinary.com/onexa/image/upload/v1582544620/Final_1_oulatn.png" width="180px" height="150px" style="display:inline; margin: 12px 0px 0px 107px;"> --}}
 
                         <div class="navbar navbar-expand-lg navbar-dark far_nav pull-right" style="width: 75%;">
                             <a href="#" class="navbar-brand"></a>

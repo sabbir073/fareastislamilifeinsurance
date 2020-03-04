@@ -93,8 +93,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-7 offset-md-2">
-      <img src="https://www.fareastislamilife.com/files/common/shareholdings-structure.jpg" style="width:100%;margin: 0 auto;" class="img-fluid" alt="">
+    <div class="col-md-7 offset-md-3">
+      <div id="piechart"></div>
     </div>
   </div>
 </div>
@@ -106,5 +106,31 @@
 @endsection
 
 @section('js')
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Sponsors & Directors', 33],
+  ['Institute', 2],
+  ['General Public', 4],
+  ['Foreign', 2],
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Shareholding Structure', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script
 
 @endsection

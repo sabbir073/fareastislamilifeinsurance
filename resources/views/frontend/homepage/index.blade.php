@@ -1071,6 +1071,11 @@ img.zoom {
   grid-gap: 0.5em;
       padding: 20px 0;
 }
+
+#gallery > div {
+  border-radius: 4px;
+}
+
 @media (max-width: 800px) {
   #gallery {
     display: flex;

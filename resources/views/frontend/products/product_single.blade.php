@@ -13,6 +13,9 @@
   border: 1px solid #fff;
 }
 
+p{
+  color:#000;
+}
 
 @endsection
 

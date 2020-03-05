@@ -1069,6 +1069,7 @@ img.zoom {
 #gallery {
   grid-template: repeat(6, 1fr)/repeat(6, 1fr);
   grid-gap: 0.5em;
+      padding: 20px 0;
 }
 @media (max-width: 800px) {
   #gallery {

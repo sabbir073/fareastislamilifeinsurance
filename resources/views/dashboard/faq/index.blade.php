@@ -126,7 +126,7 @@ FAQ
             								<tr>
             									<th class="wd-15p">ID</th>
             									<th class="wd-20p">Question</th>
-            									<th class="wd-10p">Answer</th>
+            									{{-- <th class="wd-10p">Answer</th> --}}
             									<th class="wd-10p">Action</th>
             								</tr>
             							</thead>
@@ -137,7 +137,7 @@ FAQ
                               <tr>
               									<td>{{ $faq->id }}</td>
               									<td>{{ Str::limit($faq->question,20) }}</td>
-              									<td>{!! html_entity_decode(Str::limit($faq->answer,20)) !!}</td>
+              									{{-- <td>{!! html_entity_decode(Str::limit($faq->answer,20)) !!}</td> --}}
               									<td>
               									    <div class="btn-group" role="group" aria-label="Basic example">
                           <a type="button" href="{{ url('/dashboard/faq/edit') }}/{{ $faq->id }}" class="btn btn-secondary pd-x-25 active"><i class="icon ion-edit"></i></a>

@@ -83,11 +83,11 @@ a,p{
   opacity: 0;
   position: absolute;
   color: #000;
-  background-color: #000;
+  {{-- background-color: #000; --}}
   font: bold 4em "Helvetica";
-  text-shadow: 0 -1px 5px #fff, -1px 0px 5px #fff, 0 1px 5px #fff, 1px 0px 5px #fff;
+  {{-- text-shadow: 0 -1px 5px #fff, -1px 0px 5px #fff, 0 1px 5px #fff, 1px 0px 5px #fff; --}}
   padding: 2rem;
-  mix-blend-mode: difference;
+  {{-- mix-blend-mode: difference; --}}
   width: 100%;
   height: 100%;
   transition: all ease 1s;
@@ -99,7 +99,7 @@ a,p{
   transition: all ease 1s;
 }
 #gallery > div:hover img {
-  filter: blur(4px);
+  filter: blur(15px);
 }
 #gallery > div:hover a {
   opacity: 1;
@@ -247,10 +247,10 @@ a,p{
 
               <div id="gallery">
                 <div><img src="{{ asset('uploads/gallery') }}/{{ $gallery->gallery }}"/>
-                  <a href="#lightbox-1" style="font-size: 14px;">{{ $gallery->title }}</a></div>
+                  <a href="#lightbox-{{ $gallery->id }}" style="font-size: 14px;">{{ $gallery->title }}</a></div>
               </div>
 
-              <div class="lightbox" id="lightbox-1">
+              <div class="lightbox" id="lightbox-{{ $gallery->id }}">
                 <div class="content"><img src="{{ asset('uploads/gallery') }}/{{ $gallery->gallery }}"/>
                   <div class="title">{{ $gallery->title }}</div><a class="close" href="#gallery"></a>
                 </div>

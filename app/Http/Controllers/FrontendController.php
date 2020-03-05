@@ -82,7 +82,7 @@ class FrontendController extends Controller
       $sliders              = Slider::all();
       $quick_services       = QuickService::all();
       $claims               = Claim::latest()->paginate(4);
-      $galleries            = Gallery::latest()->get();
+      $galleries            = Gallery::latest()->paginate(16);
       $promotions           = Promotion::latest()->get();
 
       // echo $popups[0]->toDate->format('M');

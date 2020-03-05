@@ -2424,7 +2424,7 @@ img.zoom {
       <div class="row">
 
 
-            @foreach ($galleries as $gallery)
+            @forelse ($galleries as $gallery)
               <div class="col-lg-3 col-md-4 col-xs-6">
                 {{-- <a href="{{ asset('uploads/gallery') }}/{{ $gallery->gallery }}" class="fancybox" rel="ligthbox">
                     <img  src="{{ asset('uploads/gallery') }}/{{ $gallery->gallery }}" class="zoom img-fluid"  alt="">
@@ -2444,9 +2444,9 @@ img.zoom {
                 </div>
               </div>
 
+            @empty
 
-
-            @endforeach
+            @endforelse
 
 
      </div>

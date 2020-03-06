@@ -2704,7 +2704,7 @@ img.zoom {
                   <div class="icon-box-three text-center" style="border: 2px solid #e4e8ed !important;">
 
                         <img src="{{ asset('uploads/awards') }}/{{ $award->thumbnail }}" class="hvr-bounce-in" alt="{{ $fareast_star->name }}">
-                        <h6 class="awardtitle">Bizz Award <br> 2020</h6>
+                        <h6 class="awardtitle" style="font-size: 14px;">{{ $award->name }}</h6>
 
                   </div><!-- ends: .icon-box -->
                 </a>

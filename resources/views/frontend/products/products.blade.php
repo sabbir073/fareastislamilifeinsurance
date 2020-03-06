@@ -4,7 +4,7 @@
 
 .flip-card .back-contents p{
   color: #fff;
-font-size: 34px;
+font-size: 20px;
 }
 
 .flip-card .flip-overlay{
@@ -51,7 +51,7 @@ font-size: 34px;
               <div class="row">
 
 @foreach ($products as $product)
-  <div class="col-lg-4 col-md-6" style="text-align: -webkit-center;">
+  <div class="col-lg-3 col-md-6" style="text-align: -webkit-center;">
 
 
 <a href="{{ url('/products/product-single') }}/{{ $product->id }}">
@@ -66,7 +66,7 @@ font-size: 34px;
   </div>
   <div class="flip-overlay"></div>
   </div><!-- ends: .flip-front -->
-  <div class="flip-back">
+  <div class="flip-back" style="height:65%;">
   <div class="back-contents">
       <h3 class="color-light">{!! html_entity_decode($product->product_title) !!}</h3>
       <a href="{{ url('/products/product-single') }}/{{ $product->id }}" class="btn btn-light btn-sm">Read Details</a>

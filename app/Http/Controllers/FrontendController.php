@@ -345,7 +345,7 @@ class FrontendController extends Controller
     // about
     function about()
     {
-      $About = About::first();
+      $About = About::all();
       $Mission = Mission::all();
       $Vision = Vision::all();
       $History = History::all();

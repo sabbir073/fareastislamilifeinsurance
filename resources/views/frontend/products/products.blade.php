@@ -7,6 +7,9 @@
 font-size: 20px;
 }
 
+.flip-boxes{
+  background: transparent;
+}
 .flip-card .flip-overlay{
   background: transparent;
 }
@@ -56,7 +59,7 @@ font-size: 20px;
         </div>
       </div>
 
-  <div class="p-top-80 p-bottom-50 section-bg">
+  <div class="p-top-80 p-bottom-50"  style="background: url(https://res.cloudinary.com/onexa/image/upload/v1581408048/shape1_rwwqcx.png) no-repeat; background-size: cover;">
 
       <div class="flip-boxes icon-box--seven">
           <div class="container" id="myTable">

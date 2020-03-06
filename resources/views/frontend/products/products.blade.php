@@ -25,10 +25,16 @@ font-size: 20px;
 @section('content')
 
 
+
+
   <section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="z-index: 1;">
           <div class="bg_image_holder" style="background-image: url(&quot;img/breadbg.jpg&quot;); opacity: 1;">
               <img src="https://picfiles.alphacoders.com/191/191008.jpg" alt="img/breadbg.jpg">
           </div>
+
+
+
+
           <div class="container content_above">
               <div class="row">
                   <div class="col-md-12">
@@ -42,12 +48,18 @@ font-size: 20px;
 
 
 
-
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-md-12">
+            <input type="search" id="myInput" class="form-control" name="search" placeholder="Search Here">
+          </div>
+        </div>
+      </div>
 
   <div class="p-top-80 p-bottom-50 section-bg">
 
       <div class="flip-boxes icon-box--seven">
-          <div class="container">
+          <div class="container" id="myTable">
               <div class="row">
 
 @foreach ($products as $product)
@@ -98,11 +110,16 @@ font-size: 20px;
 
 @section('js')
 
+
+
 <script type="text/javascript">
 
   $(document).ready(function(){
-    $('.far_product').click(function(){
-      location.href = "{{ url('/product-single') }}";
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable .col-lg-3").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
     });
   });
 

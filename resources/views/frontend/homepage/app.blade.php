@@ -1745,19 +1745,18 @@ a {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 200px;
     visibility: hidden;
   }
   .menu > ol > li > ol > li {
-    margin-top: 0.5rem;
+    
     transition: 250ms cubic-bezier(0.42, 0.83, 0.49, 1.35) transform;
     transform: scale(0);
   }
   .menu > ol > li > ol > li > a {
     display: block;
     text-align: center;
-    border-radius: 0.2rem;
-    padding: 4px;
+    padding: 10px 4px;
     font-size: 12px;
     background: #28A745;
     color: rgba(255, 255, 255, 0.6);
